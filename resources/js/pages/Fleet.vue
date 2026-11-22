@@ -158,7 +158,7 @@ const hasActiveFilters = computed(() => {
                                             ></path>
                                         </svg>
                                     </div>
-                                    Filters & Search
+                                    Filter & Pencarian
                                     <span
                                         v-if="hasActiveFilters"
                                         class="ml-2 rounded-full bg-orange-500 px-2 py-1 text-xs text-white"
@@ -204,7 +204,7 @@ const hasActiveFilters = computed(() => {
                                         <input
                                             v-model="searchQuery"
                                             type="text"
-                                            placeholder="Search by make, model, or features..."
+                                            placeholder="Cari berdasarkan merek, model, atau fitur..."
                                             class="w-full rounded-xl border border-gray-300 py-2 pr-4 pl-12 text-gray-900 placeholder-gray-500 transition-all duration-200 focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
                                             @keydown.enter="handleSearch"
                                         />
@@ -226,7 +226,7 @@ const hasActiveFilters = computed(() => {
                                         type="submit"
                                         class="w-full rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 px-6 py-2 font-semibold text-white shadow-lg transition-all duration-200 hover:from-orange-600 hover:to-orange-700 hover:shadow-xl focus:ring-4 focus:ring-orange-200"
                                     >
-                                        Search Fleet
+                                        Cari
                                     </button>
                                 </form>
                             </div>
@@ -237,13 +237,13 @@ const hasActiveFilters = computed(() => {
                                     <div>
                                         <label
                                             class="mb-2 block text-sm font-medium text-gray-700"
-                                            >Vehicle Make</label
+                                            >Merek Mobil</label
                                         >
                                         <select
                                             v-model="selectedMake"
                                             class="w-full rounded-xl border border-gray-300 px-4 py-2 text-gray-900 transition-all duration-200 focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
                                         >
-                                            <option value="">All Makes</option>
+                                            <option value="">Semua Merek</option>
                                             <option
                                                 v-for="make in makes"
                                                 :key="make"
@@ -258,14 +258,14 @@ const hasActiveFilters = computed(() => {
                                     <div>
                                         <label
                                             class="mb-2 block text-sm font-medium text-gray-700"
-                                            >Fuel Type</label
+                                            >Tipe Bahan Bakar</label
                                         >
                                         <select
                                             v-model="selectedFuelType"
                                             class="w-full rounded-xl border border-gray-300 px-4 py-2 text-gray-900 transition-all duration-200 focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
                                         >
                                             <option value="">
-                                                All Fuel Types
+                                                Semua Tipe Bahan Bakar
                                             </option>
                                             <option
                                                 v-for="fuelType in fuelTypes"
@@ -286,13 +286,13 @@ const hasActiveFilters = computed(() => {
                                     <div>
                                         <label
                                             class="mb-2 block text-sm font-medium text-gray-700"
-                                            >Model Year</label
+                                            >Tahun Model</label
                                         >
                                         <select
                                             v-model="selectedYear"
                                             class="w-full rounded-xl border border-gray-300 px-4 py-2 text-gray-900 transition-all duration-200 focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
                                         >
-                                            <option value="">All Years</option>
+                                            <option value="">Semua Tahun</option>
                                             <option
                                                 v-for="year in years"
                                                 :key="year"
@@ -307,30 +307,30 @@ const hasActiveFilters = computed(() => {
                                     <div>
                                         <label
                                             class="mb-2 block text-sm font-medium text-gray-700"
-                                            >Daily Rate Range</label
+                                            >Harga Sewa per Hari</label
                                         >
                                         <div class="grid grid-cols-2 gap-3">
                                             <div class="relative">
                                                 <span
                                                     class="absolute top-1/2 left-3 -translate-y-1/2 text-gray-500"
-                                                    >$</span
+                                                    >Rp</span
                                                 >
                                                 <input
                                                     v-model="minPrice"
                                                     type="number"
-                                                    placeholder="Min"
+                                                    placeholder="Minimum"
                                                     class="w-full rounded-xl border border-gray-300 py-2 pr-4 pl-8 text-gray-900 transition-all duration-200 focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
                                                 />
                                             </div>
                                             <div class="relative">
                                                 <span
                                                     class="absolute top-1/2 left-3 -translate-y-1/2 text-gray-500"
-                                                    >$</span
+                                                    >Rp</span
                                                 >
                                                 <input
                                                     v-model="maxPrice"
                                                     type="number"
-                                                    placeholder="Max"
+                                                    placeholder="Maksimum"
                                                     class="w-full rounded-xl border border-gray-300 py-2 pr-4 pl-8 text-gray-900 transition-all duration-200 focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
                                                 />
                                             </div>
@@ -347,14 +347,14 @@ const hasActiveFilters = computed(() => {
                                     @click="applyFilters"
                                     class="w-full rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 px-6 py-2 font-semibold text-white shadow-lg transition-all duration-200 hover:from-orange-600 hover:to-orange-700 hover:shadow-xl focus:ring-4 focus:ring-orange-200"
                                 >
-                                    Apply Filters
+                                    Terapkan Filter
                                 </button>
 
                                 <button
                                     @click="clearFilters"
                                     class="w-full rounded-xl border border-gray-300 bg-white px-4 py-2 font-medium text-gray-700 transition-all duration-200 hover:border-gray-400 hover:bg-gray-50"
                                 >
-                                    Clear All Filters
+                                    Hapus Semua Filter
                                 </button>
                             </div>
 
@@ -374,26 +374,25 @@ const hasActiveFilters = computed(() => {
                                     <h2
                                         class="text-xl font-semibold text-gray-900"
                                     >
-                                        {{ cars.total }} Premium Vehicles
-                                        Available
+                                        {{ cars.total }} Mobil Tersedia
                                     </h2>
                                     <p class="text-sm text-gray-600">
-                                        Showing {{ cars.from }} -
-                                        {{ cars.to }} results
+                                        Menampilkan {{ cars.from }} -
+                                        {{ cars.to }} hasil
                                     </p>
                                 </div>
                                 <div
                                     class="flex items-center space-x-2 text-sm text-gray-500"
                                 >
                                     <span
-                                        >Page {{ cars.current_page }} of
+                                        >Halaman {{ cars.current_page }} dari
                                         {{ cars.last_page }}</span
                                     >
                                     <div class="h-4 w-px bg-gray-300"></div>
                                     <span
                                         class="rounded-full bg-orange-100 px-3 py-1 font-medium text-orange-700"
                                     >
-                                        {{ cars.data.length }} shown
+                                        {{ cars.data.length }} ditampilkan
                                     </span>
                                 </div>
                             </div>
@@ -470,12 +469,12 @@ const hasActiveFilters = computed(() => {
                                         @click="goToPage(cars.links[0].url)"
                                         class="rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 px-6 py-3 font-semibold text-white shadow-lg transition-all duration-200 hover:from-orange-600 hover:to-orange-700"
                                     >
-                                        Previous
+                                        Sebelumnya
                                     </button>
                                     <span
                                         class="flex items-center rounded-xl bg-gray-100 px-4 py-3 text-sm font-medium text-gray-700"
                                     >
-                                        Page {{ cars.current_page }} of
+                                        Halaman {{ cars.current_page }} dari
                                         {{ cars.last_page }}
                                     </span>
                                     <button
@@ -491,7 +490,7 @@ const hasActiveFilters = computed(() => {
                                         "
                                         class="rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 px-6 py-3 font-semibold text-white shadow-lg transition-all duration-200 hover:from-orange-600 hover:to-orange-700"
                                     >
-                                        Next
+                                        Selanjutnya
                                     </button>
                                 </div>
 
@@ -519,19 +518,19 @@ const hasActiveFilters = computed(() => {
 
                                 <!-- Results info -->
                                 <div class="text-sm text-gray-600">
-                                    Showing
+                                    Menampilkan
                                     <span class="font-semibold text-gray-900">{{
                                         cars.from
                                     }}</span>
-                                    to
+                                    -
                                     <span class="font-semibold text-gray-900">{{
                                         cars.to
                                     }}</span>
-                                    of
+                                    dari
                                     <span class="font-semibold text-gray-900">{{
                                         cars.total
                                     }}</span>
-                                    results
+                                    hasil
                                 </div>
                             </div>
                         </div>

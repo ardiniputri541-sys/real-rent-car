@@ -96,18 +96,18 @@ watch(search, (v, ov) => {
         <!-- Main -->
         <main class="flex-1 space-y-6 p-8">
             <div class="flex items-center justify-between gap-4">
-                <h1 class="text-2xl font-semibold">Reservations</h1>
+                <h1 class="text-2xl font-semibold">Data Pemesanan</h1>
             </div>
 
             <div class="flex flex-col gap-4">
                 <div class="flex items-center gap-2">
                     <Input
                         v-model="search"
-                        placeholder="Search reservation #, client, car, plate..."
+                        placeholder="Cari nomor reservasi #, pelanggan, mobil, pelat nomor..."
                         class="max-w-md"
                         @keyup.enter="doSearch"
                     />
-                    <Button @click="doSearch">Search</Button>
+                    <Button @click="doSearch">Cari</Button>
                 </div>
 
                 <!-- Status Filter -->
@@ -129,7 +129,7 @@ watch(search, (v, ov) => {
                                     statusFilter !== 'all',
                             }"
                         >
-                            All ({{
+                            Semua ({{
                                 Object.values(statuses).reduce(
                                     (acc: number, curr: any) =>
                                         acc + (curr as any).count,
@@ -179,22 +179,22 @@ watch(search, (v, ov) => {
                             <th
                                 class="px-4 py-3 text-left text-xs font-medium tracking-wider text-gray-500 uppercase"
                             >
-                                #
+                                No.Pemesanan
                             </th>
                             <th
                                 class="px-4 py-3 text-left text-xs font-medium tracking-wider text-gray-500 uppercase"
                             >
-                                Client
+                                Pelanggan
                             </th>
                             <th
                                 class="px-4 py-3 text-left text-xs font-medium tracking-wider text-gray-500 uppercase"
                             >
-                                Car
+                                Mobil
                             </th>
                             <th
                                 class="px-4 py-3 text-left text-xs font-medium tracking-wider text-gray-500 uppercase"
                             >
-                                Dates
+                                Tanggal Sewa
                             </th>
                             <th
                                 class="px-4 py-3 text-left text-xs font-medium tracking-wider text-gray-500 uppercase"
@@ -260,7 +260,7 @@ watch(search, (v, ov) => {
                                 </div>
                             </td>
                             <td class="px-4 py-3">
-                                {{ props.currency.symbol }} {{ Number(res.total_amount).toFixed(2) }}
+                                Rp{{ Number(res.total_amount).toLocaleString('id-ID', {}) }}
                             </td>
                             <td class="px-4 py-3">
                                 <span
@@ -292,7 +292,7 @@ watch(search, (v, ov) => {
                                 colspan="7"
                                 class="px-4 py-6 text-center text-gray-500"
                             >
-                                No reservations found.
+                                Belum ada pemesanan.
                             </td>
                         </tr>
                     </tbody>

@@ -4,12 +4,12 @@ namespace App\Enums;
 
 enum ReservationStatus: string
 {
-    case PENDING = 'pending';
-    case CONFIRMED = 'confirmed';
-    case ACTIVE = 'active';
-    case COMPLETED = 'completed';
-    case CANCELLED = 'cancelled';
-    case NO_SHOW = 'no_show';
+    case PENDING = 'menunggu_konfirmasi';
+    case CONFIRMED = 'terkonfirmasi';
+    case ACTIVE = 'masa_sewa_berjalan';
+    case COMPLETED = 'sewa_selesai';
+    case CANCELLED = 'dibatalkan';
+    case NO_SHOW = 'pemesanan_kedaluwarsa';
 
     public static function statusColors(): array
     {

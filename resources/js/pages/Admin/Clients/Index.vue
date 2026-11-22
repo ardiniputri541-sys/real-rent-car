@@ -81,18 +81,18 @@ const navigateToClient = (id: number) => {
   <AdminLayout>
     <main class="flex-1 p-8 space-y-6">
       <div class="flex items-center justify-between gap-4">
-        <h1 class="text-2xl font-semibold">Clients</h1>
+        <h1 class="text-2xl font-semibold">Data Pelanggan</h1>
       </div>
 
       <div class="flex flex-col gap-4">
         <div class="flex items-center gap-2">
           <Input
             v-model="search"
-            placeholder="Search name or email..."
+            placeholder="Cari nama atau email..."
             class="max-w-md"
             @keyup.enter="doSearch"
           />
-          <Button @click="doSearch">Search</Button>
+          <Button @click="doSearch">Cari</Button>
         </div>
 
         <!-- Status Filter -->
@@ -106,7 +106,7 @@ const navigateToClient = (id: number) => {
                 'bg-muted text-muted-foreground hover:bg-muted/80': statusFilter !== 'all',
               }"
             >
-              All ({{ Object.values(statuses).reduce((acc: number, curr: any) => acc + (curr as any).count, 0) }})
+              Semua ({{ Object.values(statuses).reduce((acc: number, curr: any) => acc + (curr as any).count, 0) }})
             </span>
           </label>
 
@@ -132,9 +132,9 @@ const navigateToClient = (id: number) => {
         <table class="min-w-full divide-y divide-gray-200">
           <thead class="bg-gray-50">
             <tr>
-              <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Client</th>
-              <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Reservations</th>
-              <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Payments</th>
+              <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Pelanggan</th>
+              <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Jumlah Pemesanan</th>
+              <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Jumlah Pembayaran</th>
               <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
               <th class="px-4 py-3"></th>
             </tr>
@@ -161,7 +161,7 @@ const navigateToClient = (id: number) => {
                   }"
                 >
                   <span class="size-2 rounded-full" :style="{ backgroundColor: getStatusColor(c.is_active ? 'active' : 'suspended').dot }" />
-                  {{ c.is_active ? 'Active' : 'Suspended' }}
+                  {{ c.is_active ? 'Aktif' : 'Suspend' }}
                 </span>
               </td>
               <td class="px-4 py-3 text-right">
@@ -171,7 +171,7 @@ const navigateToClient = (id: number) => {
               </td>
             </tr>
             <tr v-if="props.clients.data.length === 0">
-              <td colspan="5" class="px-4 py-6 text-center text-gray-500">No clients found.</td>
+              <td colspan="5" class="px-4 py-6 text-center text-gray-500">Belum ada pelanggan.</td>
             </tr>
           </tbody>
         </table>

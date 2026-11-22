@@ -56,7 +56,7 @@ const form = useForm({
     mileage: props.car?.mileage ?? '',
     transmission: props.car?.transmission ?? 'automatic',
     seats: props.car?.seats ?? '',
-    fuel_type: (props.car?.fuel_type || 'gasoline').toLowerCase(),
+    fuel_type: (props.car?.fuel_type || 'GASOLINE').toLowerCase(),
     description: props.car?.description ?? '',
     status: props.car?.status ?? 'available',
     // FilePond fields
@@ -104,16 +104,16 @@ function submit() {
 </script>
 
 <template>
-    <Head :title="isEdit ? 'Edit Car' : 'Create Car'" />
+    <Head :title="isEdit ? 'Edit Data Mobil' : 'Tambah Data Mobil'" />
     <AdminLayout>
         <!-- Main -->
         <main class="flex-1 space-y-6 p-8">
             <div class="flex items-center justify-between gap-4">
                 <h1 class="text-2xl font-semibold">
-                    {{ isEdit ? 'Edit Car' : 'Create Car' }}
+                    {{ isEdit ? 'Edit Data Mobil' : 'Tambah Data Mobil' }}
                 </h1>
                 <Link :href="index()">
-                    <Button variant="outline">Back</Button>
+                    <Button variant="outline">Kembali</Button>
                 </Link>
             </div>
 
@@ -123,7 +123,7 @@ function submit() {
                     <div class="flex flex-col gap-6 md:flex-row md:gap-8">
                         <!-- Image -->
                         <div class="w-full md:w-1/2">
-                            <Label>Image</Label>
+                            <Label>Gambar</Label>
                             <div class="mt-2">
                                 <FileUpload
                                     ref="fileUploadRef"
@@ -164,14 +164,14 @@ function submit() {
                             </div>
                             <!-- Price Per Day -->
                             <div>
-                                <Label for="price_per_day">Price Per Day</Label>
+                                <Label for="price_per_day">Harga Per Hari</Label>
                                 <Input
                                     id="price_per_day"
                                     v-model="form.price_per_day"
                                     type="number"
                                     step="0.01"
                                     min="0"
-                                    placeholder="e.g., 50.00"
+                                    placeholder="Contoh: 350000"
                                 />
                                 <InputError
                                     :message="form.errors.price_per_day"
@@ -181,7 +181,7 @@ function submit() {
 
                             <!-- Color -->
                             <div>
-                                <Label class="mb-2 block">Color</Label>
+                                <Label class="mb-2 block">Warna</Label>
                                 <div
                                     class="grid grid-cols-3 gap-2 sm:grid-cols-5"
                                 >
@@ -224,11 +224,11 @@ function submit() {
                     <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
                         <!-- Make -->
                         <div>
-                            <Label for="make">Make</Label>
+                            <Label for="make">Merek</Label>
                             <Input
                                 id="make"
                                 v-model="form.make"
-                                placeholder="e.g., Toyota, Honda, Ford, BMW..."
+                                placeholder="Contoh: Toyota, Honda, BMW..."
                             />
                             <InputError
                                 :message="form.errors.make"
@@ -242,7 +242,7 @@ function submit() {
                             <Input
                                 id="model"
                                 v-model="form.model"
-                                placeholder="e.g., Camry, Civic, F-150, X5..."
+                                placeholder="Contoh: Camry, Civic, F-150, X5..."
                             />
                             <InputError
                                 :message="form.errors.model"
@@ -252,14 +252,14 @@ function submit() {
 
                         <!-- Year -->
                         <div>
-                            <Label for="year">Year</Label>
+                            <Label for="year">Tahun</Label>
                             <Input
                                 id="year"
                                 v-model="form.year"
                                 type="number"
                                 :min="1900"
                                 :max="new Date().getFullYear() + 1"
-                                placeholder="e.g., 2023"
+                                placeholder="yyyy"
                             />
                             <InputError
                                 :message="form.errors.year"
@@ -269,11 +269,11 @@ function submit() {
 
                         <!-- License Plate -->
                         <div>
-                            <Label for="license_plate">License Plate</Label>
+                            <Label for="license_plate">Nomor Polisi</Label>
                             <Input
                                 id="license_plate"
                                 v-model="form.license_plate"
-                                placeholder="e.g., ABC-1234 or 123-ABC-45"
+                                placeholder="Contoh: ABC-1234 or 123-ABC-45"
                             />
                             <InputError
                                 :message="form.errors.license_plate"
@@ -283,14 +283,14 @@ function submit() {
 
                         <!-- Mileage -->
                         <div>
-                            <Label for="mileage">Mileage (km)</Label>
+                            <Label for="mileage">Jarak Tempuh (km)</Label>
                             <Input
                                 id="mileage"
                                 v-model="form.mileage"
                                 type="number"
                                 min="0"
                                 step="1000"
-                                placeholder="e.g., 15000"
+                                placeholder="Contoh: 15000"
                             />
                             <InputError
                                 :message="form.errors.mileage"
@@ -300,7 +300,7 @@ function submit() {
 
                         <!-- Transmission -->
                         <div>
-                            <Label for="transmission">Transmission</Label>
+                            <Label for="transmission">Transmisi</Label>
                             <select
                                 id="transmission"
                                 v-model="form.transmission"
@@ -324,7 +324,7 @@ function submit() {
                                 type="number"
                                 min="1"
                                 max="20"
-                                placeholder="e.g., 5"
+                                placeholder="Contoh: 5"
                             />
                             <InputError
                                 :message="form.errors.seats"
@@ -334,7 +334,7 @@ function submit() {
 
                         <!-- Fuel Type -->
                         <div>
-                            <Label for="fuel_type">Fuel Type</Label>
+                            <Label for="fuel_type">Tipe Bahan Bakar</Label>
                             <select
                                 id="fuel_type"
                                 v-model="form.fuel_type"
@@ -356,13 +356,13 @@ function submit() {
 
                         <!-- Description -->
                         <div class="md:col-span-2">
-                            <Label for="description">Description</Label>
+                            <Label for="description">Deskripsi</Label>
                             <textarea
                                 id="description"
                                 v-model="form.description"
                                 rows="4"
                                 class="w-full rounded-md border border-input bg-transparent px-3 py-2 dark:bg-input/30"
-                                placeholder="Enter a detailed description of the car including features, condition, and any special notes..."
+                                placeholder="Masukkan deskripsi mendetail mengenai mobil tersebut, termasuk fitur, kondisi, dan catatan khusus lainnya..."
                             ></textarea>
                             <InputError
                                 :message="form.errors.description"
@@ -377,15 +377,15 @@ function submit() {
                         {{
                             form.processing
                                 ? isEdit
-                                    ? 'Saving...'
-                                    : 'Creating...'
+                                    ? 'Menyimpan...'
+                                    : 'Menyimpan...'
                                 : isEdit
-                                  ? 'Save Changes'
-                                  : 'Create Car'
+                                  ? 'Simpan Perubahan'
+                                  : 'Tambah Data'
                         }}
                     </Button>
                     <Link :href="index()">
-                        <Button type="button" variant="outline">Cancel</Button>
+                        <Button type="button" variant="outline">Batal</Button>
                     </Link>
                 </div>
             </form>

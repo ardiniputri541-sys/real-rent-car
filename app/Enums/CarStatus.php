@@ -15,26 +15,26 @@ enum CarStatus: string
     public function label(): string
     {
         return match ($this) {
-            self::AVAILABLE   => 'Available',
-            self::RESERVED    => 'Reserved',
-            self::RENTED      => 'Rented',
-            self::MAINTENANCE => 'Maintenance',
-            self::CLEANING    => 'Cleaning',
-            self::UNAVAILABLE => 'Unavailable',
-            self::RETIRED     => 'Retired',
+            self::AVAILABLE   => 'Tersedia',
+            self::RESERVED    => 'Dipesan',
+            self::RENTED      => 'Sedang Disewa',
+            self::MAINTENANCE => 'Dalam Perbaikan',
+            self::CLEANING    => 'Dalam Pembersihan',
+            self::UNAVAILABLE => 'Tidak Tersedia',
+            self::RETIRED     => 'Tidak Beroperasi',
         };
     }
 
     public function description(): string
     {
         return match ($this) {
-            self::AVAILABLE   => 'The car is ready for booking and rental.',
-            self::RESERVED    => 'The car is reserved for a customer and awaiting pickup.',
-            self::RENTED      => 'The car is currently rented by a customer.',
-            self::MAINTENANCE => 'The car is undergoing mechanical service or repair.',
-            self::CLEANING    => 'The car is being cleaned/prepared before becoming available again.',
-            self::UNAVAILABLE => 'The car is temporarily out of service (administrative or technical reasons).',
-            self::RETIRED     => 'The car is permanently removed from the fleet.',
+            self::AVAILABLE   => 'Mobil siap untuk dipesan dan disewa.',
+            self::RESERVED    => 'Mobil telah dipesan oleh pelanggan dan menunggu untuk pengambilan.',
+            self::RENTED      => 'Mobil sedang disewa oleh pelanggan.',
+            self::MAINTENANCE => 'Mobil sedang menjalani servis mekanik atau perbaikan.',
+            self::CLEANING    => 'Mobil sedang dibersihkan/dipersiapkan sebelum tersedia kembali.',
+            self::UNAVAILABLE => 'Mobil sementara tidak tersedia (alasan administratif atau teknis).',
+            self::RETIRED     => 'Mobil telah dihapus secara permanen dari armada.',
         };
     }
 

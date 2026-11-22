@@ -21,6 +21,13 @@ const bookCar = (carId: number) => {
     router.get(show(carId).url);
 };
 
+const formatRupiah = (value) => {
+    return new Intl.NumberFormat('id-ID', {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+    }).format(Number(value));
+};
+
 defineProps<Props>();
 </script>
 
@@ -42,10 +49,8 @@ defineProps<Props>();
             <div
                 class="absolute top-4 right-4 rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 px-4 py-2 shadow-lg"
             >
-                <span class="text-sm font-bold text-white"
-                    >${{ car.price_per_day }}</span
-                >
-                <span class="text-xs text-orange-100">/day</span>
+                <span class="text-sm font-bold text-white">Rp {{ formatRupiah(car.price_per_day) }}</span>
+                <span class="text-xs text-orange-100">/hari</span>
             </div>
 
             <!-- Gradient Overlay -->
@@ -61,7 +66,7 @@ defineProps<Props>();
                 <h3
                     class="text-xl font-bold text-gray-900 transition-colors group-hover:text-orange-600"
                 >
-                    {{ car.make }} {{ car.model }} - {{ car.year }} - {{ car.id }}
+                    {{ car.make }} {{ car.model }} {{ car.year }}
                 </h3>
 
                 <div class="flex items-center gap-2">
@@ -82,10 +87,10 @@ defineProps<Props>();
                         <span class="font-medium">{{ car.fuel_type }}</span>
                     </div>
                     <div class="text-xs bg-slate-400 px-2 py-1 rounded-md text-white">
-                        <p>GPS included</p>
+                        <p>GPS</p>
                     </div>
                     <div class="text-xs bg-slate-400 px-2 py-1 rounded-md text-white">
-                        <p>Insurance included</p>
+                        <p>Termasuk Asuransi</p>
                     </div>
                 </div>
             </div>
@@ -117,7 +122,7 @@ defineProps<Props>();
                             d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
                         ></path>
                     </svg>
-                    Book Now
+                    Booking Sekarang
                 </span>
             </button>
         </div>

@@ -49,9 +49,9 @@ function submit() {
     <AdminLayout>
         <main class="flex-1 space-y-6 p-8">
             <div class="flex items-center justify-between gap-4">
-                <h1 class="text-2xl font-semibold">Edit Reservation</h1>
+                <h1 class="text-2xl font-semibold">Edit Pemesanan</h1>
                 <Link :href="index().url">
-                    <Button variant="outline">Back</Button>
+                    <Button variant="outline">Kembali</Button>
                 </Link>
             </div>
 
@@ -59,14 +59,14 @@ function submit() {
             <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
                 <div class="rounded-md border p-4">
                     <div class="text-sm text-muted-foreground">
-                        Reservation #
+                        No.Pemesanan
                     </div>
                     <div class="font-medium">
                         {{ reservation.reservation_number }}
                     </div>
                 </div>
                 <div class="rounded-md border p-4">
-                    <div class="text-sm text-muted-foreground">Client</div>
+                    <div class="text-sm text-muted-foreground">Pelanggan</div>
                     <div class="font-medium">
                         {{ reservation.user?.name }} ({{
                             reservation.user?.email
@@ -74,7 +74,7 @@ function submit() {
                     </div>
                 </div>
                 <div class="rounded-md border p-4">
-                    <div class="text-sm text-muted-foreground">Car</div>
+                    <div class="text-sm text-muted-foreground">Mobil</div>
                     <div class="font-medium">
                         {{
                             reservation.car
@@ -89,7 +89,7 @@ function submit() {
                 <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
                     <!-- Start Date -->
                     <div>
-                        <Label for="start_date">Start Date</Label>
+                        <Label for="start_date">Tgl Pengambilan</Label>
                         <Input
                             id="start_date"
                             v-model="form.start_date"
@@ -103,7 +103,7 @@ function submit() {
 
                     <!-- End Date -->
                     <div>
-                        <Label for="end_date">End Date</Label>
+                        <Label for="end_date">Tgl Pengembalian</Label>
                         <Input
                             id="end_date"
                             v-model="form.end_date"
@@ -117,7 +117,7 @@ function submit() {
 
                     <!-- Pickup Time -->
                     <div>
-                        <Label for="pickup_time">Pickup Time</Label>
+                        <Label for="pickup_time">Waktu Pengambilan</Label>
                         <Input
                             id="pickup_time"
                             v-model="form.pickup_time"
@@ -131,7 +131,7 @@ function submit() {
 
                     <!-- Return Time -->
                     <div>
-                        <Label for="return_time">Return Time</Label>
+                        <Label for="return_time">Waktu Pengembalian</Label>
                         <Input
                             id="return_time"
                             v-model="form.return_time"
@@ -145,7 +145,7 @@ function submit() {
 
                     <!-- Pickup Location -->
                     <div>
-                        <Label for="pickup_location">Pickup Location</Label>
+                        <Label for="pickup_location">Lokasi Pengambilan</Label>
                         <Input
                             id="pickup_location"
                             v-model="form.pickup_location"
@@ -159,7 +159,7 @@ function submit() {
 
                     <!-- Return Location -->
                     <div>
-                        <Label for="return_location">Return Location</Label>
+                        <Label for="return_location">Lokasi Pengembalian</Label>
                         <Input
                             id="return_location"
                             v-model="form.return_location"
@@ -173,7 +173,7 @@ function submit() {
 
                     <!-- Discount Amount -->
                     <div>
-                        <Label for="discount_amount">Discount</Label>
+                        <Label for="discount_amount">Diskon</Label>
                         <Input
                             id="discount_amount"
                             v-model="form.discount_amount"
@@ -211,13 +211,13 @@ function submit() {
 
                     <!-- Notes -->
                     <div class="md:col-span-2">
-                        <Label for="notes">Notes</Label>
+                        <Label for="notes">Catatan</Label>
                         <textarea
                             id="notes"
                             v-model="form.notes"
                             rows="4"
                             class="w-full rounded-md border border-input bg-transparent px-3 py-2"
-                            placeholder="Internal notes..."
+                            placeholder="Tambahkan catatan internal..."
                         ></textarea>
                         <InputError :message="form.errors.notes" class="mt-1" />
                     </div>
@@ -228,14 +228,14 @@ function submit() {
                         class="md:col-span-2"
                     >
                         <Label for="cancellation_reason"
-                            >Cancellation Reason</Label
+                            >Alasan Pembatalan</Label
                         >
                         <textarea
                             id="cancellation_reason"
                             v-model="form.cancellation_reason"
                             rows="3"
                             class="w-full rounded-md border border-input bg-transparent px-3 py-2"
-                            placeholder="Why was this reservation cancelled?"
+                            placeholder="Mengapa pesanan ini dibatalkan?"
                         ></textarea>
                         <InputError
                             :message="form.errors.cancellation_reason"
@@ -246,10 +246,10 @@ function submit() {
 
                 <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
                     <Button type="submit" :disabled="form.processing">
-                        {{ form.processing ? 'Saving...' : 'Save Changes' }}
+                        {{ form.processing ? 'Menyimpan...' : 'Simpan Perubahan' }}
                     </Button>
                     <Link :href="index().url">
-                        <Button type="button" variant="outline">Cancel</Button>
+                        <Button type="button" variant="outline">Batal</Button>
                     </Link>
                 </div>
             </form>

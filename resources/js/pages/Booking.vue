@@ -22,6 +22,14 @@ interface Car {
 const $page = usePage();
 const car = computed<Car>(() => $page.props.car as Car);
 
+// Format angka ke mata uang Rupiah
+const formatRupiah = (value: number | string) => {
+    return new Intl.NumberFormat('id-ID', {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0,
+    }).format(Number(value));
+};
+
 const form = useForm({
     start_date: '',
     end_date: '',
@@ -132,7 +140,7 @@ const commonLocations = [
                         <a
                             href="/fleet"
                             class="font-medium transition-colors duration-200 hover:text-orange-500"
-                            >Fleet</a
+                            >Katalog</a
                         >
                         <svg
                             class="h-4 w-4 text-gray-400"
@@ -173,10 +181,10 @@ const commonLocations = [
                             <h1
                                 class="text-4xl leading-tight font-bold text-gray-900"
                             >
-                                Book {{ car.make }} {{ car.model }}
+                                Booking {{ car.make }} {{ car.model }}
                             </h1>
                             <p class="mt-1 text-gray-600">
-                                Complete your reservation in just a few steps
+                                Selesaikan reservasi Anda hanya dalam beberapa langkah
                             </p>
                         </div>
                     </div>
@@ -256,11 +264,11 @@ const commonLocations = [
                                             class="rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 px-4 py-2 text-white"
                                         >
                                             <span class="text-3xl font-bold"
-                                                >${{ car.price_per_day }}</span
+                                                >Rp {{ formatRupiah(car.price_per_day) }}</span
                                             >
                                             <span
                                                 class="block text-sm text-orange-100"
-                                                >per day</span
+                                                >per hari</span
                                             >
                                         </div>
                                     </div>
@@ -295,7 +303,7 @@ const commonLocations = [
                                     </svg>
                                 </div>
                                 <h3 class="text-2xl font-bold text-gray-900">
-                                    Booking Details
+                                    Detail Booking
                                 </h3>
                             </div>
 
@@ -318,14 +326,14 @@ const commonLocations = [
                                                 d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
                                             ></path>
                                         </svg>
-                                        Rental Period
+                                        Periode Sewa
                                     </h4>
                                     <div class="grid gap-6 md:grid-cols-2">
                                         <div class="space-y-2">
                                             <label
                                                 class="block text-sm font-semibold text-gray-700"
                                             >
-                                                Pickup Date *
+                                                Tanggal Pengambilan *
                                             </label>
                                             <input
                                                 v-model="form.start_date"
@@ -351,7 +359,7 @@ const commonLocations = [
                                             <label
                                                 class="block text-sm font-semibold text-gray-700"
                                             >
-                                                Return Date *
+                                                Tanggal Pengembalian *
                                             </label>
                                             <input
                                                 v-model="form.end_date"
@@ -402,14 +410,14 @@ const commonLocations = [
                                                 d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                                             ></path>
                                         </svg>
-                                        Pickup & Return Locations
+                                        Lokasi Pengambilan & Pengembalian
                                     </h4>
                                     <div class="grid gap-6 md:grid-cols-2">
                                         <div class="space-y-2">
                                             <label
                                                 class="block text-sm font-semibold text-gray-700"
                                             >
-                                                Pickup Location *
+                                                Lokasi Pengambilan *
                                             </label>
                                             <select
                                                 v-model="form.pickup_location"
@@ -422,7 +430,7 @@ const commonLocations = [
                                                 }"
                                             >
                                                 <option value="">
-                                                    Select pickup location
+                                                    Pilih Lokasi Pengambilan
                                                 </option>
                                                 <option
                                                     v-for="location in commonLocations"
@@ -448,7 +456,7 @@ const commonLocations = [
                                             <label
                                                 class="block text-sm font-semibold text-gray-700"
                                             >
-                                                Return Location *
+                                                Lokasi Pengembalian *
                                             </label>
                                             <select
                                                 v-model="form.return_location"
@@ -461,7 +469,7 @@ const commonLocations = [
                                                 }"
                                             >
                                                 <option value="">
-                                                    Select return location
+                                                    Pilih Lokasi Pengembalian
                                                 </option>
                                                 <option
                                                     v-for="location in commonLocations"
@@ -512,7 +520,7 @@ const commonLocations = [
                                     </svg>
                                 </div>
                                 <h3 class="text-2xl font-bold text-gray-900">
-                                    Booking Summary
+                                    Ringkasan Pemesanan
                                 </h3>
                             </div>
 
@@ -524,12 +532,12 @@ const commonLocations = [
                                         class="flex items-center justify-between"
                                     >
                                         <span class="font-medium text-gray-600"
-                                            >Rental Period</span
+                                            >Periode Sewa</span
                                         >
                                         <span class="font-bold text-gray-900">
                                             {{
                                                 rentalDays > 0
-                                                    ? `${rentalDays} day${rentalDays > 1 ? 's' : ''}`
+                                                    ? `${rentalDays} hari`
                                                     : '-'
                                             }}
                                         </span>
@@ -539,10 +547,10 @@ const commonLocations = [
                                         class="flex items-center justify-between"
                                     >
                                         <span class="font-medium text-gray-600"
-                                            >Daily Rate</span
+                                            >Harga</span
                                         >
                                         <span class="font-bold text-gray-900"
-                                            >${{ car.price_per_day }}</span
+                                            >Rp {{ formatRupiah(car.price_per_day) }} /hari</span
                                         >
                                     </div>
                                 </div>
@@ -557,11 +565,7 @@ const commonLocations = [
                                         <span
                                             class="text-lg font-bold text-gray-900"
                                         >
-                                            ${{
-                                                rentalDays > 0
-                                                    ? subtotal.toFixed(2)
-                                                    : '0.00'
-                                            }}
+                                            Rp {{ formatRupiah(rentalDays > 0 ? subtotal : 0) }}
                                         </span>
                                     </div>
 
@@ -574,11 +578,7 @@ const commonLocations = [
                                         <span
                                             class="text-lg font-bold text-gray-900"
                                         >
-                                            ${{
-                                                rentalDays > 0
-                                                    ? tax.toFixed(2)
-                                                    : '0.00'
-                                            }}
+                                            Rp {{ formatRupiah(rentalDays > 0 ? tax : 0) }}
                                         </span>
                                     </div>
 
@@ -595,11 +595,7 @@ const commonLocations = [
                                             <span
                                                 class="text-2xl font-bold text-orange-500"
                                             >
-                                                ${{
-                                                    rentalDays > 0
-                                                        ? total.toFixed(2)
-                                                        : '0.00'
-                                                }}
+                                                Rp {{ formatRupiah(rentalDays > 0 ? total : 0) }}
                                             </span>
                                         </div>
                                     </div>
@@ -641,7 +637,7 @@ const commonLocations = [
                                             d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                                         ></path>
                                     </svg>
-                                    Processing...
+                                    Memproses pesanan...
                                 </span>
                                 <span
                                     v-else-if="!$page.props.auth.user"
@@ -660,7 +656,7 @@ const commonLocations = [
                                             d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
                                         ></path>
                                     </svg>
-                                    Login to Book
+                                    Login dulu sebelum pesan
                                 </span>
                                 <span
                                     v-else
@@ -675,7 +671,7 @@ const commonLocations = [
                                             d="M416 64C433.7 64 448 78.3 448 96L448 128L480 128C515.3 128 544 156.7 544 192L544 480C544 515.3 515.3 544 480 544L160 544C124.7 544 96 515.3 96 480L96 192C96 156.7 124.7 128 160 128L192 128L192 96C192 78.3 206.3 64 224 64C241.7 64 256 78.3 256 96L256 128L384 128L384 96C384 78.3 398.3 64 416 64zM438 225.7C427.3 217.9 412.3 220.3 404.5 231L285.1 395.2L233 343.1C223.6 333.7 208.4 333.7 199.1 343.1C189.8 352.5 189.7 367.7 199.1 377L271.1 449C276.1 454 283 456.5 289.9 456C296.8 455.5 303.3 451.9 307.4 446.2L443.3 259.2C451.1 248.5 448.7 233.5 438 225.7z"
                                         />
                                     </svg>
-                                    Book Now
+                                    Booking Sekarang
                                 </span>
                             </button>
                         </div>

@@ -4,16 +4,16 @@ namespace App\Enums;
 
 enum TicketStatus: string
 {
-    case NEW = "new";
-    case IN_PROGRESS = "in_progress";
-    case CLOSED = "closed";
+    case NEW = "terbaru";
+    case IN_PROGRESS = "sedang_ditangani";
+    case CLOSED = "selesai";
 
     public function label(): string
     {
         return match ($this) {
-            TicketStatus::NEW => 'New',
-            TicketStatus::IN_PROGRESS => 'In Progress',
-            TicketStatus::CLOSED => 'Closed',
+            TicketStatus::NEW => 'Terbaru',
+            TicketStatus::IN_PROGRESS => 'Sedang Ditangani',
+            TicketStatus::CLOSED => 'Selesai',
         };
     }
 

@@ -147,7 +147,7 @@ function closeTicket(){
                     </div>
                     <div class="mt-2">
                         <Link :href="index().url">
-                            <Button variant="outline">Back</Button>
+                            <Button variant="outline">Kembali</Button>
                         </Link>
                         <Button
                             v-if="!isGuest && ticket.status !== 'closed'"
@@ -156,7 +156,7 @@ function closeTicket(){
                             class="ml-2"
                             :disabled="btnProcessing"
                         >
-                            {{ btnProcessing ? 'Closing...' : 'Close Ticket' }}
+                            {{ btnProcessing ? 'Menutup...' : 'Tutup Pesan' }}
                         </Button>
                     </div>
                 </div>
@@ -207,7 +207,7 @@ function closeTicket(){
                         v-if="!ticket.messages || ticket.messages.length === 0"
                         class="rounded-md border border-dashed p-6 text-center text-sm text-gray-500"
                     >
-                        No messages yet. Start the conversation below.
+                        Belum ada pesan. Mulai percakapan di bawah ini.
                     </div>
                     <div
                         v-for="message in ticket.messages"
@@ -254,7 +254,7 @@ function closeTicket(){
                             v-model="form.message"
                             rows="3"
                             class="w-full rounded-lg border-1 border-gray-300 p-2"
-                            placeholder="Type your reply here... (Ctrl+Enter to send)"
+                            placeholder="Ketik balasan di sini... (Ctrl+Enter untuk mengirim)"
                             required
                             aria-label="Type your reply here"
                             @keydown.ctrl.enter.prevent="submitReply"

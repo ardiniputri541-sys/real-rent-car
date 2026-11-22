@@ -4,12 +4,12 @@ namespace App\Enums;
 
 enum PaymentStatus: string
 {
-    case PENDING = 'pending';
-    case COMPLETED = 'completed';
-    case FAILED = 'failed';
-    case CANCELLED = 'cancelled';
-    case REFUNDED = 'refunded';
-    case PARTIALLY_REFUNDED = 'partially_refunded';
+    case PENDING = 'menunggu_pembayaran';
+    case COMPLETED = 'berhasil';
+    case FAILED = 'gagal';
+    case CANCELLED = 'dibatalkan';
+    case REFUNDED = 'dana_dikembalikan';
+    case PARTIALLY_REFUNDED = 'pengembalian_dana_sebagian';
 
     public static function getMeta(): array
     {
@@ -24,12 +24,12 @@ enum PaymentStatus: string
     public function label(): string
     {
         return match ($this) {
-            self::PENDING => 'Pending',
-            self::COMPLETED => 'Completed',
-            self::FAILED => 'Failed',
-            self::CANCELLED => 'Cancelled',
-            self::REFUNDED => 'Refunded',
-            self::PARTIALLY_REFUNDED => 'Partially Refunded',
+            self::PENDING => 'Menunggu Pembayaran',
+            self::COMPLETED => 'Berhasil',
+            self::FAILED => 'Gagal',
+            self::CANCELLED => 'Dibatalkan',
+            self::REFUNDED => 'Dana Dikembalikan',
+            self::PARTIALLY_REFUNDED => 'Pengembalian Dana Sebagian',
         };
     }
 

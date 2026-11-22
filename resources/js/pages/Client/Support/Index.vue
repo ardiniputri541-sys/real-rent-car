@@ -45,8 +45,8 @@ function goToCreateTicket() {
     <ClientLayout>
         <main class="flex-1 space-y-6 p-8">
             <div class="flex items-center justify-between gap-4">
-                <h1 class="text-2xl font-semibold">Support Tickets</h1>
-                <Button @click="goToCreateTicket">New Ticket</Button>
+                <h1 class="text-2xl font-semibold">Pusat Bantuan</h1>
+                <Button @click="goToCreateTicket">Kirim Pengaduan</Button>
             </div>
 
             <!-- Tickets Table -->
@@ -57,12 +57,12 @@ function goToCreateTicket() {
                             <th
                                 class="px-4 py-3 text-left text-xs font-medium tracking-wider text-gray-500 uppercase"
                             >
-                                Ticket #
+                                Nomor Pengaduan
                             </th>
                             <th
                                 class="px-4 py-3 text-left text-xs font-medium tracking-wider text-gray-500 uppercase"
                             >
-                                Subject
+                                Subjek
                             </th>
                             <th
                                 class="px-4 py-3 text-left text-xs font-medium tracking-wider text-gray-500 uppercase"
@@ -72,7 +72,7 @@ function goToCreateTicket() {
                             <th
                                 class="px-4 py-3 text-left text-xs font-medium tracking-wider text-gray-500 uppercase"
                             >
-                                Created
+                                Tanggal Dikirim
                             </th>
                         </tr>
                     </thead>
@@ -108,7 +108,7 @@ function goToCreateTicket() {
                                 colspan="6"
                                 class="px-4 py-6 text-center text-gray-500"
                             >
-                                No tickets found.
+                                Belum ada pengaduan.
                             </td>
                         </tr>
                     </tbody>

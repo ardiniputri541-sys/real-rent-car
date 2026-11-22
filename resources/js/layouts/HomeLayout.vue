@@ -27,7 +27,7 @@ const dashboardLink = role === 'admin' ? adminCarsIndex() : clientReservationsIn
                     <div class="flex flex-col items-center space-x-2">
                         <img src="/logo/logo.png" alt="logo" class="h-6" />
                         <p class="font-bold">
-                            REAL<span class="text-orange-500">RENT</span>CAR
+                            Nusa<span class="text-orange-500">Drive</span>
                         </p>
                     </div>
 
@@ -38,28 +38,28 @@ const dashboardLink = role === 'admin' ? adminCarsIndex() : clientReservationsIn
                             :class="{ 'text-orange-500': $page.url === home().url, 'text-gray-700': $page.url !== home().url }" 
                             class="font-medium transition-colors hover:text-orange-500"
                         >
-                            Home
+                            Beranda
                         </Link>
                         <Link 
                             :href="fleet()" 
                             :class="{ 'text-orange-500': $page.url.startsWith('/fleet'), 'text-gray-700': !$page.url.startsWith('/fleet') }" 
                             class="font-medium transition-colors hover:text-orange-500"
                         >
-                            Fleet
+                            Mobil
                         </Link>
                         <Link 
                             :href="about()" 
                             :class="{ 'text-orange-500': $page.url === '/about', 'text-gray-700': $page.url !== '/about' }" 
                             class="font-medium transition-colors hover:text-orange-500"
                         >
-                            About
+                            Tentang Kami
                         </Link>
                         <Link 
                             :href="contact()" 
                             :class="{ 'text-orange-500': $page.url === '/contact', 'text-gray-700': $page.url !== '/contact' }" 
                             class="font-medium transition-colors hover:text-orange-500"
                         >
-                            Contact
+                            Hubungi Kami
                         </Link>
                     </div>
 
@@ -90,13 +90,13 @@ const dashboardLink = role === 'admin' ? adminCarsIndex() : clientReservationsIn
                                 :href="login()"
                                 class="inline-flex items-center px-6 py-2.5 text-sm font-semibold text-gray-700 transition-colors duration-200 hover:text-orange-600"
                             >
-                                Sign In
+                                Masuk
                             </Link>
                             <Link
                                 :href="register()"
                                 class="inline-flex items-center rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 px-6 py-2.5 text-sm font-semibold text-white shadow-lg transition-all duration-200 hover:scale-105 hover:from-orange-600 hover:to-orange-700 hover:shadow-xl"
                             >
-                                Get Started
+                                Daftar
                             </Link>
                         </template>
                     </div>
@@ -131,51 +131,51 @@ const dashboardLink = role === 'admin' ? adminCarsIndex() : clientReservationsIn
                             </div>
                             <div>
                                 <h3 class="text-xl font-bold">
-                                    REAL<span class="text-orange-500"
-                                        >RENT</span
+                                    Nusa<span class="text-orange-500"
+                                        >Drive</span
                                     >
                                 </h3>
                                 <p class="text-xs font-medium text-gray-400">
-                                    PREMIUM CARS
+                                    MOBIL PREMIUM
                                 </p>
                             </div>
                         </div>
                         <p class="leading-relaxed text-gray-400">
-                            Premium car rental service providing luxury and
-                            reliable vehicles for all your transportation needs
-                            with exceptional customer service.
+                            Layanan penyewaan mobil premium yang menyediakan
+                            kendaraan mewah dan tepercaya untuk segala kebutuhan
+                            transportasi Anda, disertai layanan pelanggan yang istimewa.
                         </p>
                     </div>
 
                     <div class="space-y-6">
-                        <h4 class="text-lg font-semibold">Services</h4>
+                        <h4 class="text-lg font-semibold">Layanan</h4>
                         <ul class="space-y-3 text-gray-400">
                             <li>
                                 <a
                                     href="#"
                                     class="transition-colors hover:text-orange-500"
-                                    >Luxury Car Rental</a
+                                    >Sewa Mobil Mewah</a
                                 >
                             </li>
                             <li>
                                 <a
                                     href="#"
                                     class="transition-colors hover:text-orange-500"
-                                    >Long Term Rental</a
+                                    >Sewa Jangka Panjang</a
                                 >
                             </li>
                             <li>
                                 <a
                                     href="#"
                                     class="transition-colors hover:text-orange-500"
-                                    >Corporate Solutions</a
+                                    >Solusi Korporat</a
                                 >
                             </li>
                             <li>
                                 <a
                                     href="#"
                                     class="transition-colors hover:text-orange-500"
-                                    >Airport Transfers</a
+                                    >Antar-Jemput Bandara</a
                                 >
                             </li>
                         </ul>
@@ -188,35 +188,35 @@ const dashboardLink = role === 'admin' ? adminCarsIndex() : clientReservationsIn
                                 <a
                                     :href="contact.url()"
                                     class="transition-colors hover:text-orange-500"
-                                    >Contact Us</a
+                                    >Hubungi Kami</a
                                 >
                             </li>
                             <li>
                                 <a
                                     href="#"
                                     class="transition-colors hover:text-orange-500"
-                                    >Help Center</a
+                                    >Bantuan</a
                                 >
                             </li>
                             <li>
                                 <a
                                     href="#"
                                     class="transition-colors hover:text-orange-500"
-                                    >Terms & Conditions</a
+                                    >Syarat & Ketentuan</a
                                 >
                             </li>
                             <li>
                                 <a
                                     href="#"
                                     class="transition-colors hover:text-orange-500"
-                                    >Privacy Policy</a
+                                    >Kebijakan Privasi</a
                                 >
                             </li>
                         </ul>
                     </div>
 
                     <div class="space-y-6">
-                        <h4 class="text-lg font-semibold">Contact Info</h4>
+                        <h4 class="text-lg font-semibold">Info Kontak</h4>
                         <div class="space-y-3 text-gray-400">
                             <div class="flex items-center space-x-3">
                                 <svg
@@ -248,7 +248,7 @@ const dashboardLink = role === 'admin' ? adminCarsIndex() : clientReservationsIn
                                         d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                                     ></path>
                                 </svg>
-                                <span>hello@realrent.com</span>
+                                <span>hello@nusadrive.com</span>
                             </div>
                             <div class="flex items-center space-x-3">
                                 <svg
@@ -270,7 +270,7 @@ const dashboardLink = role === 'admin' ? adminCarsIndex() : clientReservationsIn
                                         d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                                     ></path>
                                 </svg>
-                                <span>123 Business Ave, City</span>
+                                <span>Jakarta, Indonesia</span>
                             </div>
                         </div>
                     </div>
@@ -279,7 +279,7 @@ const dashboardLink = role === 'admin' ? adminCarsIndex() : clientReservationsIn
                 <div class="mt-2 border-t border-gray-800 pt-8">
                    
                         <p class="text-gray-400 text-center">
-                            &copy; 2025 RealRent. All rights reserved.
+                            &copy; 2026 NusaDrive Rental Mobil. All rights reserved.
                         </p>
                        
                 </div>

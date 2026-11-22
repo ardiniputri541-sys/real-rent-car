@@ -26,11 +26,11 @@ enum CarColor: string
     {
         return [
             self::WHITE->value => [
-                'name' => 'White',
+                'name' => 'Putih',
                 'hex' => '#F9FAFB',
             ],
             self::BLACK->value => [
-                'name' => 'Black',
+                'name' => 'Hitam',
                 'hex' => '#1F2937',
             ],
             self::SILVER->value => [
@@ -38,23 +38,23 @@ enum CarColor: string
                 'hex' => '#E5E7EB',
             ],
             self::GRAY->value => [
-                'name' => 'Gray',
+                'name' => 'Abu-abu',
                 'hex' => '#9CA3AF',
             ],
             self::RED->value => [
-                'name' => 'Red',
+                'name' => 'Merah',
                 'hex' => '#FEE2E2',
             ],
             self::BLUE->value => [
-                'name' => 'Blue',
+                'name' => 'Biru',
                 'hex' => '#DBEAFE',
             ],
             self::GREEN->value => [
-                'name' => 'Green',
+                'name' => 'Hijau',
                 'hex' => '#DCFCE7',
             ],
             self::YELLOW->value => [
-                'name' => 'Yellow',
+                'name' => 'Kuning',
                 'hex' => '#FEF9C3',
             ],
             self::ORANGE->value => [
@@ -62,7 +62,7 @@ enum CarColor: string
                 'hex' => '#FFEDD5',
             ],
             self::BROWN->value => [
-                'name' => 'Brown',
+                'name' => 'Coklat',
                 'hex' => '#F3E8D2',
             ],
         ];

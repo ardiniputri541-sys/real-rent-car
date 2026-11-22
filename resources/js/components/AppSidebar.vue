@@ -24,32 +24,32 @@ import { home } from '@/routes';
 
 const mainNavItems: NavItem[] = [
     {
-        title: 'Cars',
+        title: 'Data Mobil',
         href: carsIndex(),
         icon: Car,
     },
     {
-        title: 'Reservations',
+        title: 'Pemesanan',
         href: reservationsIndex(),
         icon: Calendar,
     },
     {
-        title: 'Clients',
+        title: 'Pelanggan',
         href: clientsIndex(),
         icon: User,
     },
     {
-        title: 'Payments',
+        title: 'Pembayaran',
         href: paymentsIndex(),
         icon: CreditCard,
     },
     {
-        title: 'Reports',
+        title: 'Laporan',
         href: reportsIndex(),
         icon: BarChart,
     },
     {
-        title: 'Support',
+        title: 'Bantuan',
         href: supportIndex(),
         icon: LifeBuoy,
     },

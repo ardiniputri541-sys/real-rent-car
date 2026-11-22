@@ -199,7 +199,7 @@ watch(
                             v-model="form.message"
                             rows="3"
                             class="w-full rounded-lg border-1 border-gray-300 p-2"
-                            placeholder="Type your message here... (Ctrl+Enter to send)"
+                            placeholder="Ketik pesan Anda di sini... (Ctrl+Enter untuk mengirim)"
                             required
                             aria-label="Type your message here"
                             @keydown.ctrl.enter.prevent="submitReply"

@@ -75,7 +75,7 @@ const homeCars = $page.props.homeCars as Car[];
                                             d="M13 10V3L4 14h7v7l9-11h-7z"
                                         ></path>
                                     </svg>
-                                    Premium Car Rental Experience
+                                    NusaDrive untuk Setiap Perjalanan
                                 </div>
 
                                 <h1
@@ -92,10 +92,9 @@ const homeCars = $page.props.homeCars as Car[];
                                 <p
                                     class="max-w-lg text-lg leading-relaxed text-gray-600"
                                 >
-                                    Experience luxury and reliability with our
-                                    premium fleet. From business meetings to
-                                    weekend adventures, find the perfect vehicle
-                                    for every journey.
+                                    Nikmati kemudahan menyewa mobil untuk berbagai kebutuhan perjalanan.
+                                    Pilih kendaraan yang sesuai, tentukan jadwal, dan pesan mobil dengan
+                                    proses yang mudah dan praktis bersama NusaDrive.
                                 </p>
                             </div>
 
@@ -117,11 +116,11 @@ const homeCars = $page.props.homeCars as Car[];
                                             d="M13 7l5 5m0 0l-5 5m5-5H6"
                                         ></path>
                                     </svg>
-                                    Browse Fleet
+                                    Lihat Pilihan Mobil
                                 </a>
                                 <a
                                     :href="about.url()"
-                                    class="inline-flex cursor-pointer items-center justify-center rounded-xl border-2 border-gray-300 bg-white text-md px-5 py-2 font-semibold text-gray-700 transition-all duration-200 hover:border-orange-500 hover:text-orange-600 hover:shadow-lg"
+                                    class="inline-flex cursor-pointer items-center justify-center rounded-xl border-2 border-gray-300 bg-white text-md px-5 py-2 font-semibold text-gray-700 transition-all duration-200 hover:border-orange-500 hover:text-orange-600 hover:shadow-lg" v-if="false"
                                 >
                                     Learn More
                                 </a>
@@ -194,24 +193,24 @@ const homeCars = $page.props.homeCars as Car[];
                         <div
                             class="mb-6 inline-flex items-center rounded-full bg-orange-50 px-4 py-2 text-sm font-semibold text-orange-700 ring-1 ring-orange-200"
                         >
-                            Our Premium Collection
+                            Pilihan Mobil NusaDrive
                         </div>
                         <h2
                             class="mb-6 text-4xl font-bold text-gray-900 lg:text-5xl"
                         >
-                            Discover Our
+                            Temukan Mobil
                             <span
                                 class="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent"
                             >
-                                Elite Fleet
+                                Unggulan Kami
                             </span>
                         </h2>
                         <p
                             class="mx-auto max-w-3xl text-xl leading-relaxed text-gray-600"
                         >
-                            Each vehicle in our collection is meticulously
-                            maintained and equipped with premium features to
-                            ensure your journey is nothing short of exceptional.
+                            Setiap kendaraan dalam koleksi kami dirawat dengan 
+                            cermat dan dilengkapi dengan fitur-fitur premium 
+                            untuk memastikan perjalanan Anda istimewa.
                         </p>
                     </div>
 
@@ -241,7 +240,7 @@ const homeCars = $page.props.homeCars as Car[];
                                     d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
                                 ></path>
                             </svg>
-                            View Complete Fleet
+                            Lihat Semua Mobil
                         </a>
                     </div>
                 </div>
@@ -254,17 +253,16 @@ const homeCars = $page.props.homeCars as Car[];
                         <h2
                             class="mb-6 text-4xl font-bold text-gray-900 lg:text-5xl"
                         >
-                            Why Choose
+                            Mengapa Memilih
                             <span
                                 class="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent"
                             >
-                                RealRent </span
+                                NusaDrive </span
                             >?
                         </h2>
                         <p class="mx-auto max-w-2xl text-xl text-gray-600">
-                            We're committed to providing an unparalleled car
-                            rental experience with premium service at every
-                            touchpoint.
+                            Kami berkomitmen untuk menghadirkan pengalaman sewa mobil
+                            yang nyaman, mudah, dan terpercaya untuk setiap perjalanan Anda.
                         </p>
                     </div>
 
@@ -288,12 +286,12 @@ const homeCars = $page.props.homeCars as Car[];
                                 </svg>
                             </div>
                             <h3 class="mb-4 text-2xl font-bold text-gray-900">
-                                Premium Quality
+                                Kualitas Premium
                             </h3>
                             <p class="leading-relaxed text-gray-600">
-                                Every vehicle undergoes comprehensive inspection
-                                and maintenance to guarantee your safety,
-                                comfort, and peace of mind.
+                                Setiap kendaraan menjalani pemeriksaan dan perawatan
+                                menyeluruh demi menjamin keselamatan, kenyamanan, 
+                                serta ketenangan pikiran Anda.
                             </p>
                         </div>
 
@@ -316,12 +314,12 @@ const homeCars = $page.props.homeCars as Car[];
                                 </svg>
                             </div>
                             <h3 class="mb-4 text-2xl font-bold text-gray-900">
-                                24/7 Support
+                                Dukungan 24/7
                             </h3>
                             <p class="leading-relaxed text-gray-600">
-                                Our dedicated support team is available around
-                                the clock to assist you with any questions or
-                                concerns during your rental.
+                                Tim layanan pelanggan kami siap membantu Anda kapan pun,
+                                baik untuk menjawab pertanyaan maupun menangani kendala
+                                apa pun selama masa sewa.
                             </p>
                         </div>
 
@@ -344,12 +342,13 @@ const homeCars = $page.props.homeCars as Car[];
                                 </svg>
                             </div>
                             <h3 class="mb-4 text-2xl font-bold text-gray-900">
-                                Best Value
+                                Harga Terbaik
                             </h3>
                             <p class="leading-relaxed text-gray-600">
-                                Transparent pricing with no hidden fees. Get
-                                premium car rental services at competitive rates
-                                with exceptional value.
+                                Harga transparan tanpa biaya tersembunyi.
+                                Kami memastikan informasi biaya sewa
+                                disampaikan secara jelas agar Anda dapat
+                                merencanakan perjalanan dengan nyaman.
                             </p>
                         </div>
                     </div>

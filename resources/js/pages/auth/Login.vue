@@ -38,16 +38,16 @@ const isDemoOpen = ref(false);
                 <!-- Header -->
                 <div class="text-center">
                     <h1 class="mb-2 text-3xl font-bold text-gray-900">
-                        Welcome Back
+                        Masuk
                     </h1>
                     <p class="text-gray-600">
-                        Sign in to your account to continue
+                        Masuk ke akun Anda untuk melanjutkan
                     </p>
                 </div>
 
                 <!-- Demo Credentials (Collapsible) -->
                 <div
-                    class="overflow-hidden rounded-xl border border-blue-200 bg-gradient-to-r from-blue-50 to-indigo-50 shadow-sm"
+                    v-if="false" class="overflow-hidden rounded-xl border border-blue-200 bg-gradient-to-r from-blue-50 to-indigo-50 shadow-sm"
                 >
                     <!-- Toggle Button -->
                     <button
@@ -183,7 +183,7 @@ const isDemoOpen = ref(false);
                                 for="email"
                                 class="mb-2 block text-sm font-semibold text-gray-900"
                             >
-                                Email Address
+                                Email
                             </Label>
                             <Input
                                 id="email"
@@ -193,7 +193,7 @@ const isDemoOpen = ref(false);
                                 autofocus
                                 :tabindex="1"
                                 autocomplete="email"
-                                placeholder="Enter your email"
+                                placeholder="Masukkan email terdaftar"
                                 class="w-full rounded-lg border border-gray-300 px-4 py-3 transition-colors focus:border-orange-500 focus:ring-2 focus:ring-orange-500"
                             />
                             <InputError :message="errors.email" class="mt-1" />
@@ -206,7 +206,7 @@ const isDemoOpen = ref(false);
                                     for="password"
                                     class="block text-sm font-semibold text-gray-900"
                                 >
-                                    Password
+                                    Kata Sandi
                                 </Label>
                                 <TextLink
                                     v-if="canResetPassword"
@@ -214,7 +214,7 @@ const isDemoOpen = ref(false);
                                     class="text-sm font-medium text-orange-600 hover:text-orange-700"
                                     :tabindex="5"
                                 >
-                                    Forgot password?
+                                    Lupa kata sandi?
                                 </TextLink>
                             </div>
                             <Input
@@ -224,7 +224,7 @@ const isDemoOpen = ref(false);
                                 required
                                 :tabindex="2"
                                 autocomplete="current-password"
-                                placeholder="Enter your password"
+                                placeholder="Masukkan kata sandi"
                                 class="w-full rounded-lg border border-gray-300 px-4 py-3 transition-colors focus:border-orange-500 focus:ring-2 focus:ring-orange-500"
                             />
                             <InputError
@@ -246,7 +246,7 @@ const isDemoOpen = ref(false);
                                     class="rounded border-gray-300 text-orange-600 focus:ring-orange-500"
                                 />
                                 <span class="text-sm text-gray-700"
-                                    >Remember me for 30 days</span
+                                    >Ingat saya selama 30 hari</span
                                 >
                             </Label>
                         </div>
@@ -263,19 +263,19 @@ const isDemoOpen = ref(false);
                                 v-if="processing"
                                 class="mr-2 h-5 w-5 animate-spin"
                             />
-                            {{ processing ? 'Signing in...' : 'Sign In' }}
+                            {{ processing ? 'Signing in...' : 'Masuk' }}
                         </Button>
 
                         <!-- Sign Up Link -->
                         <div class="border-t border-gray-200 pt-4 text-center">
                             <p class="text-sm text-gray-600">
-                                Don't have an account?
+                                Belum punya akun?
                                 <TextLink
                                     :href="register()"
                                     :tabindex="5"
                                     class="ml-1 font-semibold text-orange-600 hover:text-orange-700"
                                 >
-                                    Create one here
+                                    Daftar
                                 </TextLink>
                             </p>
                         </div>

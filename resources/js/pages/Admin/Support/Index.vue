@@ -116,7 +116,7 @@ function goToTicket(id: number) {
     <AdminLayout>
         <main class="flex-1 p-8 space-y-6">
             <div class="flex items-center justify-between gap-4">
-                <h1 class="text-2xl font-semibold">Support Tickets</h1>
+                <h1 class="text-2xl font-semibold">Daftar Pengaduan & Pesan Masuk</h1>
             </div>
 
             <!-- Ticket Type Toggle -->
@@ -136,7 +136,7 @@ function goToTicket(id: number) {
                             'hover:bg-gray-50': ticketType !== 'customer'
                         }"
                     >
-                        <span class="font-medium">Customer Tickets</span>
+                        <span class="font-medium">Pengaduan Pelanggan</span>
                         <span class="text-sm text-muted-foreground">
                             {{ getTotalCount('customer') }} total
                         </span>
@@ -157,7 +157,7 @@ function goToTicket(id: number) {
                             'hover:bg-gray-50': ticketType !== 'guest'
                         }"
                     >
-                        <span class="font-medium">Guest Tickets</span>
+                        <span class="font-medium">Pesan dari Pengunjung</span>
                         <span class="text-sm text-muted-foreground">
                             {{ getTotalCount('guest') }} total
                         </span>
@@ -170,11 +170,11 @@ function goToTicket(id: number) {
                 <div class="flex items-center gap-2">
                     <Input
                         v-model="search"
-                        :placeholder="`Search ${ticketType} tickets...`"
+                        :placeholder="`Cari pengaduan & keluhan...`"
                         class="max-w-md"
                         @keyup.enter="doSearch"
                     />
-                    <Button @click="doSearch">Search</Button>
+                    <Button @click="doSearch">Cari</Button>
                 </div>
 
                 <!-- Status Filter -->
@@ -188,7 +188,7 @@ function goToTicket(id: number) {
                                 'bg-muted text-muted-foreground hover:bg-muted/80': statusFilter !== 'all',
                             }"
                         >
-                            All ({{ getTotalCount(ticketType) }})
+                            Semua ({{ getTotalCount(ticketType) }})
                         </span>
                     </label>
 
@@ -216,19 +216,19 @@ function goToTicket(id: number) {
                     <thead class="bg-gray-50">
                         <tr>
                             <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                Ticket #
+                                No.Pengaduan
                             </th>
                             <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                {{ ticketType === 'customer' ? 'Customer' : 'Guest' }}
+                                {{ ticketType === 'customer' ? 'Pelanggan' : 'Pengunjung' }}
                             </th>
                             <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                Subject
+                                Subjek
                             </th>
                             <th v-if="ticketType === 'customer'" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 Status
                             </th>
                             <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                Created
+                                Tanggal Dibuat
                             </th>
                             <th class="px-4 py-3"></th>
                         </tr>
@@ -278,7 +278,7 @@ function goToTicket(id: number) {
                         </tr>
                         <tr v-if="props.tickets.data.length === 0">
                             <td colspan="6" class="px-4 py-6 text-center text-gray-500">
-                                No tickets found.
+                                Belum ada pengaduan.
                             </td>
                         </tr>
                     </tbody>

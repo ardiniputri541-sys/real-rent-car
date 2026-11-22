@@ -276,7 +276,7 @@ onMounted(() => {
             <!-- Header -->
             <div class="flex items-center justify-between">
                 <h2 class="text-2xl font-bold text-gray-900">
-                    Reports & Analytics
+                    Dashboard
                 </h2>
 
                 <!-- Period Selector -->
@@ -285,7 +285,7 @@ onMounted(() => {
                         for="period"
                         class="text-sm font-medium text-gray-700"
                     >
-                        Period:
+                        Periode:
                     </label>
                     <select
                         id="period"
@@ -667,7 +667,7 @@ onMounted(() => {
                 <div class="p-6">
                     <div class="mb-4 flex items-center justify-between">
                         <h3 class="text-lg font-medium text-gray-900">
-                            Daily Reservations Created
+                            Jumlah Pemesanan Harian
                         </h3>
                         <div class="text-sm text-gray-500">
                             {{ chartData.dateRange.start }} to
@@ -687,10 +687,10 @@ onMounted(() => {
                 <div class="p-6">
                     <div class="mb-4 flex items-center justify-between">
                         <h3 class="text-lg font-medium text-gray-900">
-                            Top 10 Cars Performance
+                            Top 10 Performa Mobil Terbaik
                         </h3>
                         <div class="text-sm text-gray-500">
-                            Click column headers to sort
+                            Klik judul kolom untuk mengurutkan
                         </div>
                     </div>
                     <div class="overflow-x-auto">
@@ -705,7 +705,7 @@ onMounted(() => {
                                         <div
                                             class="flex items-center space-x-1"
                                         >
-                                            <span>Car</span>
+                                            <span>Mobil</span>
                                             <svg
                                                 v-if="sortField === 'car_name'"
                                                 class="h-4 w-4"
@@ -765,7 +765,7 @@ onMounted(() => {
                                         <div
                                             class="flex items-center space-x-1"
                                         >
-                                            <span>Reservations</span>
+                                            <span>Jumlah Pemesanan</span>
                                             <svg
                                                 v-if="
                                                     sortField ===
@@ -798,7 +798,7 @@ onMounted(() => {
                                         <div
                                             class="flex items-center space-x-1"
                                         >
-                                            <span>Total Revenue</span>
+                                            <span>Total Pendapatan</span>
                                             <svg
                                                 v-if="
                                                     sortField ===

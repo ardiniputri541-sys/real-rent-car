@@ -129,22 +129,22 @@ class ReportsController extends Controller
             'totalRevenue' => [
                 'value' => $totalRevenue,
                 'formatted' => config('app.currency_symbol') . number_format($totalRevenue, 2),
-                'label' => 'Total Revenue'
+                'label' => 'Total Pendapatan'
             ],
             'platformVisits' => [
                 'value' => $platformVisits,
                 'formatted' => number_format($platformVisits),
-                'label' => 'Platform Visits'
+                'label' => 'Jumlah Kunjungan Platform'
             ],
             'activeReservations' => [
                 'value' => $activeReservations,
                 'formatted' => number_format($activeReservations),
-                'label' => 'Active Reservations'
+                'label' => 'Pemesanan Aktif'
             ],
             'newClients' => [
                 'value' => $newClients,
                 'formatted' => number_format($newClients),
-                'label' => 'New Clients'
+                'label' => 'Jumlah Pelanggan Baru'
             ]
         ];
     }
@@ -167,25 +167,25 @@ class ReportsController extends Controller
             'totalCars' => [
                 'value' => $totalCars,
                 'formatted' => number_format($totalCars),
-                'label' => 'Total Cars',
+                'label' => 'Total Mobil',
                 'color' => '#6366F1' // Indigo
             ],
             'availableCars' => [
                 'value' => $availableCars,
                 'formatted' => number_format($availableCars),
-                'label' => 'Available Cars',
+                'label' => 'Mobil Tersedia',
                 'color' => CarStatus::AVAILABLE->color()
             ],
             'rentedCars' => [
                 'value' => $rentedCars,
                 'formatted' => number_format($rentedCars),
-                'label' => 'Rented Cars',
+                'label' => 'Mobil Disewa',
                 'color' => CarStatus::RENTED->color()
             ],
             'unavailableCars' => [
                 'value' => $unavailableCars,
                 'formatted' => number_format($unavailableCars),
-                'label' => 'Unavailable Cars',
+                'label' => 'Mobil Tidak Tersedia',
                 'color' => '#6B7280' // Gray
             ]
         ];
@@ -306,14 +306,14 @@ class ReportsController extends Controller
     private function getPeriodOptions(): array
     {
         return [
-            ['value' => 'today', 'label' => 'Today'],
-            ['value' => 'yesterday', 'label' => 'Yesterday'],
-            ['value' => 'this_week', 'label' => 'This Week'],
-            ['value' => 'last_week', 'label' => 'Last Week'],
-            ['value' => 'this_month', 'label' => 'This Month'],
-            ['value' => 'last_month', 'label' => 'Last Month'],
-            ['value' => 'this_year', 'label' => 'This Year'],
-            ['value' => 'last_year', 'label' => 'Last Year'],
+            ['value' => 'today', 'label' => 'Hari ini'],
+            ['value' => 'yesterday', 'label' => 'Kemarin'],
+            ['value' => 'this_week', 'label' => 'Minggu ini'],
+            ['value' => 'last_week', 'label' => 'Minggu lalu'],
+            ['value' => 'this_month', 'label' => 'Bulan ini'],
+            ['value' => 'last_month', 'label' => 'Bulan lalu'],
+            ['value' => 'this_year', 'label' => 'Tahun ini'],
+            ['value' => 'last_year', 'label' => 'Tahun lalu'],
         ];
     }
 }

@@ -122,10 +122,10 @@ const destroyCar = () => {
         <!-- Main -->
         <main class="flex-1 p-8 space-y-6">
             <div class="flex items-center justify-between gap-4">
-                <h1 class="text-2xl font-semibold">Cars</h1>
+                <h1 class="text-2xl font-semibold">Data Mobil</h1>
                 <Link :href="create()">
                     <Button >
-                        + New Car
+                        + Tambah Mobil
                     </Button>
                 </Link>
             </div>
@@ -134,11 +134,11 @@ const destroyCar = () => {
                 <div class="flex items-center gap-2">
                     <Input
                       v-model="search"
-                      placeholder="Search make, model, plate..."
+                      placeholder="Cari berdasarkan merek, model, pelat nomor..."
                       class="max-w-md"
                       @keyup.enter="doSearch"
                     />
-                    <Button @click="doSearch">Search</Button>
+                    <Button @click="doSearch">Cari</Button>
                 </div>
                 
                 <!-- Status Filter -->
@@ -158,7 +158,7 @@ const destroyCar = () => {
                                 'bg-muted text-muted-foreground hover:bg-muted/80': statusFilter !== 'all'
                             }"
                         >
-                            All ({{ Object.values(statuses).reduce((acc, curr) => acc + curr.count, 0) }})
+                            Semua ({{ Object.values(statuses).reduce((acc, curr) => acc + curr.count, 0) }})
                         </span>
                     </label>
                     
@@ -193,10 +193,10 @@ const destroyCar = () => {
                 <table class="min-w-full divide-y divide-gray-200">
                     <thead class="bg-gray-50">
                         <tr>
-                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Image</th>
-                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Car</th>
-                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Plate</th>
-                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Price/Day</th>
+                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Gambar</th>
+                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Mobil</th>
+                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">No.Polisi</th>
+                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Harga/Hari</th>
                             <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
                             <th class="px-4 py-3"></th>
                         </tr>
@@ -210,7 +210,9 @@ const destroyCar = () => {
                                 <div class="font-medium">{{ car.year }} {{ car.make }} {{ car.model }}</div>
                             </td>
                             <td class="px-4 py-3">{{ car.license_plate }}</td>
-                            <td class="px-4 py-3">{{ currency.symbol }}{{ Number(car.price_per_day).toFixed(2) }}</td>
+                            <td class="px-4 py-3">Rp{{ Number(car.price_per_day).toLocaleString('id-ID', {
+        maximumFractionDigits: 0
+    }) }}</td>
                             <td class="px-4 py-3">
                                 <span
                                   class="inline-flex items-center gap-2 rounded-full px-2.5 py-1 text-xs font-medium"
@@ -234,7 +236,7 @@ const destroyCar = () => {
                             </td>
                         </tr>
                         <tr v-if="props.cars.data.length === 0">
-                            <td colspan="6" class="px-4 py-6 text-center text-gray-500">No cars found.</td>
+                            <td colspan="6" class="px-4 py-6 text-center text-gray-500">Belum ada armada.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -261,23 +263,23 @@ const destroyCar = () => {
             <DialogHeader>
               <DialogTitle class="flex items-center gap-2">
                 <AlertCircle class="h-5 w-5 text-destructive" />
-                Delete Car
+                Hapus Data Mobil
               </DialogTitle>
               <DialogDescription>
-                Are you sure you want to delete this car? This action cannot be undone.
+                Apakah Anda yakin ingin menghapus data mobil ini? Tindakan ini tidak dapat dibatalkan.
               </DialogDescription>
             </DialogHeader>
             
             <Alert variant="destructive" class="mt-4">
               <AlertCircle class="h-4 w-4" />
               <AlertDescription>
-                This will permanently delete the car and all its associated data.
+                Tindakan ini akan menghapus mobil tersebut beserta semua data yang terkait dengannya secara permanen.
               </AlertDescription>
             </Alert>
             
             <DialogFooter class="mt-4">
               <DialogClose as-child>
-                <Button variant="outline">Cancel</Button>
+                <Button variant="outline">Batal</Button>
               </DialogClose>
               <Button 
                 type="button" 
@@ -285,7 +287,7 @@ const destroyCar = () => {
                 @click="destroyCar"
                 :disabled="!carToDelete"
               >
-                Delete Car
+                Hapus
               </Button>
             </DialogFooter>
           </DialogContent>

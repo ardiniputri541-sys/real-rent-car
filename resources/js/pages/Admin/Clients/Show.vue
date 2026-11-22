@@ -59,7 +59,10 @@ const processingActivate = ref(false);
 
 function fmtMoney(n?: number | string) {
   const v = Number(n ?? 0);
-  return `${props.currency.symbol}${v.toFixed(2)}`;
+
+  return `Rp${v.toLocaleString('id-ID', {
+    maximumFractionDigits: 0
+  })}`;
 }
 
 function suspendClient() {
@@ -109,10 +112,10 @@ const statusStyle = computed(() => {
         </div>
         <div class="flex items-center gap-2">
          
-          <Button v-if="client.is_active" variant="destructive" @click="showSuspendDialog = true">Suspend User</Button>
-          <Button v-else @click="showActivateDialog = true">Activate User</Button>
+          <Button v-if="client.is_active" variant="destructive" @click="showSuspendDialog = true">Blokir Akun</Button>
+          <Button v-else @click="showActivateDialog = true">Aktifkan Akun</Button>
           <Link :href="index()">
-            <Button variant="outline">Back</Button>
+            <Button variant="outline">Kembali</Button>
           </Link>
         </div>
       </div>
@@ -120,29 +123,29 @@ const statusStyle = computed(() => {
       <!-- Stats -->
       <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
         <div class="rounded-md border p-4">
-          <div class="text-sm text-muted-foreground">Total Spent</div>
+          <div class="text-sm text-muted-foreground">Total Pengeluaran</div>
           <div class="text-xl font-semibold">{{ fmtMoney(stats.total_spent) }}</div>
         </div>
         <div class="rounded-md border p-4">
-          <div class="text-sm text-muted-foreground">Reservations</div>
+          <div class="text-sm text-muted-foreground">Total Pemesanan</div>
           <div class="text-xl font-semibold">{{ stats.total_reservations }}</div>
         </div>
         <div class="rounded-md border p-4">
-          <div class="text-sm text-muted-foreground">Payments</div>
+          <div class="text-sm text-muted-foreground">Total Pembayaran</div>
           <div class="text-xl font-semibold">{{ stats.total_payments }}</div>
         </div>
       </div>
 
       <!-- Reservations -->
       <div class="rounded-md border">
-        <div class="border-b px-4 py-3 font-medium">Past Reservations</div>
+        <div class="border-b px-4 py-3 font-medium">Riwayat Pemesanan</div>
         <div class="overflow-x-auto">
           <table class="min-w-full divide-y divide-gray-200">
             <thead class="bg-gray-50">
               <tr>
-                <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">#</th>
-                <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Car</th>
-                <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Dates</th>
+                <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">No.Pemesanan</th>
+                <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Mobil</th>
+                <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Tanggal Sewa</th>
                 <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Total</th>
                 <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Status</th>
                 <th class="px-4 py-3"></th>
@@ -171,7 +174,7 @@ const statusStyle = computed(() => {
                 </td>
               </tr>
               <tr v-if="reservations.data.length === 0">
-                <td colspan="6" class="px-4 py-6 text-center text-gray-500">No reservations.</td>
+                <td colspan="6" class="px-4 py-6 text-center text-gray-500">Belum ada pemesanan.</td>
               </tr>
             </tbody>
           </table>
@@ -194,15 +197,15 @@ const statusStyle = computed(() => {
 
       <!-- Payments -->
       <div class="rounded-md border">
-        <div class="border-b px-4 py-3 font-medium">Payments</div>
+        <div class="border-b px-4 py-3 font-medium">Pembayaran</div>
         <div class="overflow-x-auto">
           <table class="min-w-full divide-y divide-gray-200">
             <thead class="bg-gray-50">
               <tr>
-                <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">#</th>
-                <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Reservation</th>
-                <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Amount</th>
-                <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Method</th>
+                <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Kode Pembayaran</th>
+                <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">No.Pemesanan</th>
+                <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Total Bayar</th>
+                <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Metode Pembayaran</th>
                 <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Status</th>
                 <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">Processed</th>
               </tr>
@@ -219,7 +222,7 @@ const statusStyle = computed(() => {
                 <td class="px-4 py-3">{{ p.processed_at ? new Date(p.processed_at).toLocaleString() : '—' }}</td>
               </tr>
               <tr v-if="payments.data.length === 0">
-                <td colspan="6" class="px-4 py-6 text-center text-gray-500">No payments.</td>
+                <td colspan="6" class="px-4 py-6 text-center text-gray-500">Belum ada transaksi pembayaran.</td>
               </tr>
             </tbody>
           </table>
@@ -247,24 +250,24 @@ const statusStyle = computed(() => {
         <DialogHeader>
           <DialogTitle class="flex items-center gap-2">
             <AlertCircle class="h-5 w-5 text-destructive" />
-            Suspend User
+            Blokir Akun
           </DialogTitle>
           <DialogDescription>
-            Are you sure you want to suspend this user? They will not be able to log in until re-activated.
+            Apakah Anda yakin ingin memblokir akun ini? Mereka tidak akan dapat masuk (login) sampai diaktifkan kembali.
           </DialogDescription>
         </DialogHeader>
         <Alert variant="destructive" class="mt-4">
           <AlertCircle class="h-4 w-4" />
           <AlertDescription>
-            This action can be reverted later by an admin, but the user will be blocked immediately.
+            Tindakan ini dapat dibatalkan nanti oleh admin, namun pengguna akan langsung diblokir.
           </AlertDescription>
         </Alert>
         <DialogFooter class="mt-4">
           <DialogClose as-child>
-            <Button variant="outline">Cancel</Button>
+            <Button variant="outline">Batal</Button>
           </DialogClose>
           <Button type="button" variant="destructive" :disabled="processingSuspend" @click="suspendClient">
-            {{ processingSuspend ? 'Suspending...' : 'Suspend User' }}
+            {{ processingSuspend ? 'Memblokir...' : 'Blokir Akun' }}
           </Button>
         </DialogFooter>
       </DialogContent>
@@ -276,18 +279,18 @@ const statusStyle = computed(() => {
         <DialogHeader>
           <DialogTitle class="flex items-center gap-2">
             <AlertCircle class="h-5 w-5 text-destructive" />
-            Activate User
+            Aktifkan Akun
           </DialogTitle>
           <DialogDescription>
-            Are you sure you want to activate this user? They will be able to log in again.
+            Apakah Anda yakin ingin mengaktifkan pengguna ini?
           </DialogDescription>
         </DialogHeader>
         <DialogFooter class="mt-4">
           <DialogClose as-child>
-            <Button variant="outline">Cancel</Button>
+            <Button variant="outline">Batal</Button>
           </DialogClose>
           <Button type="button" variant="destructive" :disabled="processingActivate" @click="activateClient">
-            {{ processingActivate ? 'Activating...' : 'Activate User' }}
+            {{ processingActivate ? 'Mengaktifkan...' : 'Aktifkan Akun' }}
           </Button>
         </DialogFooter>
       </DialogContent>

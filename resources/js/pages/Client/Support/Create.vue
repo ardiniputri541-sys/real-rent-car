@@ -48,16 +48,16 @@ const submitTicket = async () => {
                 <div class="flex items-start justify-between">
                     <div>
                         <h1 class="text-2xl font-bold text-gray-900">
-                            Create New Support Ticket
+                            Buat Pengaduan Baru
                         </h1>
                         <p class="mt-2 text-sm text-gray-600">
-                            Need help? Submit a support ticket and our team will
-                            get back to you as soon as possible.
+                            Mengalami kendala? Sampaikan pengaduan Anda
+                            dan tim NusaDrive akan segera menghubungi Anda.
                         </p>
                     </div>
                     <div>
                         <Link :href="index().url">
-                            <Button variant="outline">Back to Tickets</Button>
+                            <Button variant="outline">Kembali</Button>
                         </Link>
                     </div>
                 </div>
@@ -72,7 +72,7 @@ const submitTicket = async () => {
                             for="subject"
                             class="block text-sm font-medium text-gray-700"
                         >
-                            Subject
+                            Subjek
                             <span class="text-red-500">*</span>
                         </label>
                         <input
@@ -80,7 +80,7 @@ const submitTicket = async () => {
                             v-model="form.subject"
                             type="text"
                             class="mt-1 w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                            placeholder="Brief description of your issue"
+                            placeholder="Contoh: Kendala saat melakukan booking"
                             required
                             maxlength="255"
                             aria-label="Ticket subject"
@@ -92,7 +92,7 @@ const submitTicket = async () => {
                             {{ form.errors.subject }}
                         </p>
                         <p class="mt-1 text-xs text-gray-500">
-                            {{ form.subject.length }}/255 characters
+                            {{ form.subject.length }}/255 karakter
                         </p>
                     </div>
 
@@ -102,7 +102,7 @@ const submitTicket = async () => {
                             for="message"
                             class="block text-sm font-medium text-gray-700"
                         >
-                            Message
+                            Detail Pengaduan
                             <span class="text-red-500">*</span>
                         </label>
                         <textarea
@@ -110,7 +110,7 @@ const submitTicket = async () => {
                             v-model="form.message"
                             rows="8"
                             class="mt-1 w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                            placeholder="Provide detailed information about your issue..."
+                            placeholder="Jelaskan kendala atau keluhan yang Anda alami secara lengkap..."
                             required
                             aria-label="Ticket message"
                         ></textarea>
@@ -121,8 +121,8 @@ const submitTicket = async () => {
                             {{ form.errors.message }}
                         </p>
                         <p class="mt-1 text-xs text-gray-500">
-                            Please provide as much detail as possible to help us
-                            assist you better.
+                            Mohon berikan detail selengkap mungkin agar 
+                            kami dapat membantu Anda dengan lebih baik.
                         </p>
                     </div>
 
@@ -134,7 +134,7 @@ const submitTicket = async () => {
                                 variant="outline"
                                 :disabled="form.processing"
                             >
-                                Cancel
+                                Batal
                             </Button>
                         </Link>
                         <button
@@ -143,9 +143,9 @@ const submitTicket = async () => {
                             :disabled="!canSubmit"
                         >
                             <span v-if="form.processing"
-                                >Creating Ticket...</span
+                                >Memproses...</span
                             >
-                            <span v-else>Create Ticket</span>
+                            <span v-else>Kirim Pengaduan</span>
                         </button>
                     </div>
                 </form>
@@ -171,23 +171,20 @@ const submitTicket = async () => {
                     </div>
                     <div class="ml-3">
                         <h3 class="text-sm font-medium text-blue-800">
-                            Tips for submitting a ticket
+                            Tips Mengirim Pengaduan
                         </h3>
                         <div class="mt-2 text-sm text-blue-700">
                             <ul class="list-disc space-y-1 pl-5">
                                 <li>
-                                    Use a clear and descriptive subject line
+                                    Gunakan subjek yang singkat dan jelas.
                                 </li>
                                 <li>
-                                    Include relevant details such as error
-                                    messages or screenshots
+                                    Sertakan informasi pendukung seperti pesan
+                                    kesalahan atau tangkapan layar jika ada.
                                 </li>
                                 <li>
-                                    Describe the steps to reproduce the issue
-                                </li>
-                                <li>
-                                    Our support team typically responds within
-                                    24 hours
+                                    Tim NusaDrive akan berupaya memberikan 
+                                    tanggapan secepat mungkin.
                                 </li>
                             </ul>
                         </div>

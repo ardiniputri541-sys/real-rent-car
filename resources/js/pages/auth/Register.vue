@@ -22,10 +22,10 @@ import { LoaderCircle } from 'lucide-vue-next';
                 <!-- Header -->
                 <div class="text-center">
                     <h2 class="mb-2 text-3xl font-bold text-gray-900">
-                        Create Account
+                        Selamat Datang di NusaDrive
                     </h2>
                     <p class="text-gray-600">
-                        Join us and start your car rental journey
+                        Daftar sekarang dan nikmati kemudahan menyewa mobil untuk perjalanan Anda.
                     </p>
                 </div>
 
@@ -48,7 +48,7 @@ import { LoaderCircle } from 'lucide-vue-next';
                                 for="name"
                                 class="mb-2 block text-sm font-medium text-gray-700"
                             >
-                                Full Name
+                                Nama Lengkap (Sesuai KTP)
                             </Label>
                             <Input
                                 id="name"
@@ -58,7 +58,7 @@ import { LoaderCircle } from 'lucide-vue-next';
                                 :tabindex="1"
                                 autocomplete="name"
                                 name="name"
-                                placeholder="Enter your full name"
+                                placeholder="Masukkan nama lengkap Anda"
                                 class="w-full rounded-lg border border-gray-300 px-4 py-3 transition-colors focus:border-orange-500 focus:ring-2 focus:ring-orange-500"
                             />
                             <InputError
@@ -73,7 +73,7 @@ import { LoaderCircle } from 'lucide-vue-next';
                                 for="email"
                                 class="mb-2 block text-sm font-medium text-gray-700"
                             >
-                                Email Address
+                                Email
                             </Label>
                             <Input
                                 id="email"
@@ -82,7 +82,7 @@ import { LoaderCircle } from 'lucide-vue-next';
                                 :tabindex="2"
                                 autocomplete="email"
                                 name="email"
-                                placeholder="Enter your email address"
+                                placeholder="Masukkan email Anda"
                                 class="w-full rounded-lg border border-gray-300 px-4 py-3 transition-colors focus:border-orange-500 focus:ring-2 focus:ring-orange-500"
                             />
                             <InputError
@@ -97,7 +97,7 @@ import { LoaderCircle } from 'lucide-vue-next';
                                 for="password"
                                 class="mb-2 block text-sm font-medium text-gray-700"
                             >
-                                Password
+                                Kata Sandi
                             </Label>
                             <Input
                                 id="password"
@@ -106,7 +106,7 @@ import { LoaderCircle } from 'lucide-vue-next';
                                 :tabindex="3"
                                 autocomplete="new-password"
                                 name="password"
-                                placeholder="Create a password"
+                                placeholder="Buat kata sandi"
                                 class="w-full rounded-lg border border-gray-300 px-4 py-3 transition-colors focus:border-orange-500 focus:ring-2 focus:ring-orange-500"
                             />
                             <InputError
@@ -121,7 +121,7 @@ import { LoaderCircle } from 'lucide-vue-next';
                                 for="password_confirmation"
                                 class="mb-2 block text-sm font-medium text-gray-700"
                             >
-                                Confirm Password
+                                Konfirmasi Kata Sandi
                             </Label>
                             <Input
                                 id="password_confirmation"
@@ -130,7 +130,7 @@ import { LoaderCircle } from 'lucide-vue-next';
                                 :tabindex="4"
                                 autocomplete="new-password"
                                 name="password_confirmation"
-                                placeholder="Confirm your password"
+                                placeholder="Masukkan kembali kata sandi"
                                 class="w-full rounded-lg border border-gray-300 px-4 py-3 transition-colors focus:border-orange-500 focus:ring-2 focus:ring-orange-500"
                             />
                             <InputError
@@ -151,19 +151,19 @@ import { LoaderCircle } from 'lucide-vue-next';
                                 v-if="processing"
                                 class="mr-2 h-5 w-5 animate-spin"
                             />
-                            Create Account
+                            Daftar Sekarang
                         </Button>
 
                         <!-- Login Link -->
                         <div class="border-t border-gray-200 pt-4 text-center">
                             <p class="text-sm text-gray-600">
-                                Already have an account?
+                                Sudah punya akun?
                                 <TextLink
                                     :href="login()"
                                     class="font-medium text-orange-500 transition-colors hover:text-orange-600"
                                     :tabindex="6"
                                 >
-                                    Sign in here
+                                    Masuk
                                 </TextLink>
                             </p>
                         </div>

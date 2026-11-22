@@ -11,14 +11,13 @@ import { contact } from '@/routes'
                 <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
                     <div class="text-center">
                         <h1 class="mb-6 text-4xl font-bold md:text-5xl">
-                            About Real Rent Car
+                            Tentang NusaDrive
                         </h1>
                         <p
                             class="mx-auto max-w-3xl text-xl leading-relaxed text-gray-300"
                         >
-                            Your trusted partner in premium car rental services,
-                            providing reliable transportation solutions since
-                            2015.
+                            Mitra tepercaya dalam layanan penyewaan mobil premium,
+                            menghadirkan solusi transportasi yang andal sejak tahun 2018.
                         </p>
                     </div>
                 </div>
@@ -29,26 +28,28 @@ import { contact } from '@/routes'
                     <div class="grid items-center gap-12 lg:grid-cols-2">
                         <div>
                             <h2 class="mb-6 text-3xl font-bold text-gray-900">
-                                Our Story
+                                Cerita Kami
                             </h2>
                             <div
                                 class="space-y-4 leading-relaxed text-gray-600"
                             >
                                 <p>
-                                    Founded in 2015, Real Rent Car began with a
-                                    simple mission: to provide reliable,
-                                    affordable, and convenient car rental
-                                    services to travelers and locals alike. What
-                                    started as a small fleet of 10 vehicles has
-                                    grown into a comprehensive rental service
-                                    with over 200 premium vehicles.
+                                    Didirikan pada tahun 2018, NusaDrive bermula
+                                    dengan misi sederhana: menyediakan layanan 
+                                    penyewaan mobil yang tepercaya, terjangkau, 
+                                    dan praktis bagi wisatawan maupun masyarakat
+                                    lokal. Berawal dari armada kecil yang terdiri
+                                    dari 10 kendaraan, kini kami telah berkembang 
+                                    menjadi layanan penyewaan lengkap dengan lebih 
+                                    dari 100 kendaraan premium.
                                 </p>
                                 <p>
-                                    We understand that every journey is
-                                    important, whether it's a business trip,
-                                    family vacation, or daily commute. That's
-                                    why we've built our reputation on trust,
-                                    quality, and exceptional customer service.
+                                    Kami memahami bahwa setiap perjalanan memiliki
+                                    arti penting, baik itu untuk keperluan bisnis, 
+                                    liburan keluarga, maupun mobilitas sehari-hari. 
+                                    Oleh karena itu, kami membangun reputasi kami 
+                                    di atas fondasi kepercayaan, kualitas, dan 
+                                    layanan pelanggan yang terbaik.
                                 </p>
                             </div>
                         </div>
@@ -58,9 +59,9 @@ import { contact } from '@/routes'
                                     <div
                                         class="mb-2 text-3xl font-bold text-orange-500"
                                     >
-                                        200+
+                                        100+
                                     </div>
-                                    <div class="text-gray-600">Vehicles</div>
+                                    <div class="text-gray-600">Kendaraan</div>
                                 </div>
                                 <div>
                                     <div
@@ -76,18 +77,18 @@ import { contact } from '@/routes'
                                     <div
                                         class="mb-2 text-3xl font-bold text-orange-500"
                                     >
-                                        15+
+                                        5+
                                     </div>
-                                    <div class="text-gray-600">Locations</div>
+                                    <div class="text-gray-600">Lokasi</div>
                                 </div>
                                 <div>
                                     <div
                                         class="mb-2 text-3xl font-bold text-orange-500"
                                     >
-                                        9
+                                        7
                                     </div>
                                     <div class="text-gray-600">
-                                        Years Experience
+                                        Tahun Pengalaman
                                     </div>
                                 </div>
                             </div>
@@ -98,12 +99,12 @@ import { contact } from '@/routes'
                 <div class="mb-20">
                     <div class="mb-12 text-center">
                         <h2 class="mb-4 text-3xl font-bold text-gray-900">
-                            Our Mission & Values
+                            Visi & Misi Kami
                         </h2>
                         <p class="mx-auto max-w-2xl text-gray-600">
-                            We're committed to providing exceptional car rental
-                            experiences while maintaining the highest standards
-                            of service and integrity.
+                            Kami berkomitmen untuk menghadirkan pengalaman sewa mobil
+                            yang luar biasa dengan tetap menjaga standar layanan dan 
+                            integritas tertinggi.
                         </p>
                     </div>
 
@@ -125,12 +126,13 @@ import { contact } from '@/routes'
                             <h3
                                 class="mb-3 text-xl font-semibold text-gray-900"
                             >
-                                Reliability
+                                Keandalan
                             </h3>
                             <p class="text-gray-600">
-                                Every vehicle in our fleet is regularly
-                                maintained and inspected to ensure your safety
-                                and peace of mind on every journey.
+                                Setiap kendaraan dalam armada kami dirawat 
+                                dan diperiksa secara berkala demi menjamin 
+                                keselamatan serta ketenangan pikiran Anda 
+                                dalam setiap perjalanan.
                             </p>
                         </div>
 
@@ -151,12 +153,13 @@ import { contact } from '@/routes'
                             <h3
                                 class="mb-3 text-xl font-semibold text-gray-900"
                             >
-                                Transparency
+                                Transparansi
                             </h3>
                             <p class="text-gray-600">
-                                No hidden fees, no surprises. We believe in
-                                clear, upfront pricing and honest communication
-                                with all our customers.
+                                Tidak ada biaya tersembunyi. Kami 
+                                mengedepankan penetapan harga yang 
+                                jelas dan terbuka, serta komunikasi 
+                                yang jujur ​​kepada seluruh pelanggan kami.
                             </p>
                         </div>
 
@@ -177,12 +180,12 @@ import { contact } from '@/routes'
                             <h3
                                 class="mb-3 text-xl font-semibold text-gray-900"
                             >
-                                Excellence
+                                Keunggulan
                             </h3>
                             <p class="text-gray-600">
-                                We continuously strive to exceed expectations
-                                through superior service, quality vehicles, and
-                                innovative solutions.
+                                Kami senantiasa berupaya melampaui ekspektasi 
+                                melalui layanan prima, kendaraan berkualitas, 
+                                dan solusi inovatif.
                             </p>
                         </div>
                     </div>
@@ -193,7 +196,7 @@ import { contact } from '@/routes'
                         <h2
                             class="mb-8 text-center text-3xl font-bold text-gray-900"
                         >
-                            Why Choose Real Rent Car?
+                            Mengapa Memilih NusaDrive?
                         </h2>
 
                         <div class="grid gap-8 md:grid-cols-2">
@@ -212,11 +215,10 @@ import { contact } from '@/routes'
                                         <h4
                                             class="mb-1 font-semibold text-gray-900"
                                         >
-                                            Premium Fleet
+                                            Armada Premium
                                         </h4>
                                         <p class="text-gray-600">
-                                            Modern, well-maintained vehicles
-                                            from top manufacturers
+                                            Kendaraan modern yang terawat dengan baik dari
                                         </p>
                                     </div>
                                 </div>
@@ -235,11 +237,11 @@ import { contact } from '@/routes'
                                         <h4
                                             class="mb-1 font-semibold text-gray-900"
                                         >
-                                            24/7 Support
+                                            Dukungan 24/7
                                         </h4>
                                         <p class="text-gray-600">
-                                            Round-the-clock customer service and
-                                            roadside assistance
+                                            Layanan pelanggan dan bantuan 
+                                            yang tersedia sepanjang waktu
                                         </p>
                                     </div>
                                 </div>
@@ -258,11 +260,12 @@ import { contact } from '@/routes'
                                         <h4
                                             class="mb-1 font-semibold text-gray-900"
                                         >
-                                            Flexible Booking
+                                            Pemesanan Fleksibel
                                         </h4>
                                         <p class="text-gray-600">
-                                            Easy online booking with flexible
-                                            pickup and return options
+                                            Pemesanan daring yang mudah dengan 
+                                            pilihan lokasi pengambilan dan 
+                                            pengembalian yang fleksibel
                                         </p>
                                     </div>
                                 </div>
@@ -283,11 +286,10 @@ import { contact } from '@/routes'
                                         <h4
                                             class="mb-1 font-semibold text-gray-900"
                                         >
-                                            Competitive Pricing
+                                            Harga Kompetitif
                                         </h4>
                                         <p class="text-gray-600">
-                                            Best rates in the market with no
-                                            hidden fees
+                                            Tarif terbaik tanpa biaya tersembunyi
                                         </p>
                                     </div>
                                 </div>
@@ -306,11 +308,10 @@ import { contact } from '@/routes'
                                         <h4
                                             class="mb-1 font-semibold text-gray-900"
                                         >
-                                            Multiple Locations
+                                            Beragam Lokasi
                                         </h4>
                                         <p class="text-gray-600">
-                                            Convenient pickup points across the
-                                            city
+                                            Tersedia titik pengambilan yang strategis
                                         </p>
                                     </div>
                                 </div>
@@ -329,11 +330,11 @@ import { contact } from '@/routes'
                                         <h4
                                             class="mb-1 font-semibold text-gray-900"
                                         >
-                                            Safety First
+                                            Keselamatan Diutamakan
                                         </h4>
                                         <p class="text-gray-600">
-                                            All vehicles undergo rigorous safety
-                                            inspections
+                                            Seluruh kendaraan telah melalui pemeriksaan 
+                                            keselamatan yang ketat
                                         </p>
                                     </div>
                                 </div>
@@ -342,7 +343,7 @@ import { contact } from '@/routes'
                     </div>
                 </div>
 
-                <div class="mb-20">
+                <div v-if="false" class="mb-20">
                     <div class="mb-12 text-center">
                         <h2 class="mb-4 text-3xl font-bold text-gray-900">
                             Our Leadership Team
@@ -421,25 +422,25 @@ import { contact } from '@/routes'
                     class="rounded-lg bg-gray-900 p-8 text-center text-white md:p-12"
                 >
                     <h2 class="mb-4 text-3xl font-bold">
-                        Ready to Get Started?
+                        Siap untuk Memulai?
                     </h2>
                     <p class="mx-auto mb-8 max-w-2xl text-gray-300">
-                        Experience the Real Rent Car difference today. Browse
-                        our fleet and book your perfect vehicle in just a few
-                        clicks.
+                        Rasakan pengalaman berbeda bersama NusaDrive. 
+                        Lihat pilihan armada kami dan pesan kendaraan 
+                        yang paling pas untuk Anda hanya dalam beberapa klik.
                     </p>
                     <div class="flex flex-col justify-center gap-4 sm:flex-row">
                         <a
                             :href="fleet.url()"
                             class="rounded-lg bg-orange-500 px-8 py-3 font-semibold text-white transition-colors duration-200 hover:bg-orange-600"
                         >
-                            Browse Our Fleet
+                            Lihat Katalog Mobil
                         </a>
                         <a
                             :href="contact.url()"
                             class="rounded-lg border-2 border-white bg-transparent px-8 py-3 font-semibold text-white transition-colors duration-200 hover:bg-white hover:text-gray-900"
                         >
-                            Contact Us
+                            Hubungi Kami
                         </a>
                     </div>
                 </div>

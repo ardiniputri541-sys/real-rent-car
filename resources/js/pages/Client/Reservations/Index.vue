@@ -39,7 +39,7 @@ const navigateToReservation = (id: number) => {
         <!-- Main -->
         <main class="flex-1 space-y-6 p-8">
             <div class="flex items-center justify-between gap-4">
-                <h1 class="text-2xl font-semibold">Reservations</h1>
+                <h1 class="text-2xl font-semibold">Riwayat Booking</h1>
             </div>
 
             <div class="overflow-x-auto rounded-md border">
@@ -49,17 +49,17 @@ const navigateToReservation = (id: number) => {
                             <th
                                 class="px-4 py-3 text-left text-xs font-medium tracking-wider text-gray-500 uppercase"
                             >
-                                #
+                                No.Pemesanan
                             </th>
                             <th
                                 class="px-4 py-3 text-left text-xs font-medium tracking-wider text-gray-500 uppercase"
                             >
-                                Car
+                                Mobil
                             </th>
                             <th
                                 class="px-4 py-3 text-left text-xs font-medium tracking-wider text-gray-500 uppercase"
                             >
-                                Dates
+                                Tanggal Sewa
                             </th>
                             <th
                                 class="px-4 py-3 text-left text-xs font-medium tracking-wider text-gray-500 uppercase"
@@ -113,11 +113,11 @@ const navigateToReservation = (id: number) => {
                                 </div>
                                 <!-- duration in days-->
                                 <div class="text-xs text-muted-foreground">
-                                    {{ res.total_days }} days
+                                    {{ res.total_days }} hari
                                 </div>
                             </td>
                             <td class="px-4 py-3">
-                                {{ props.currency.symbol }} {{ Number(res.total_amount).toFixed(2) }}
+                                Rp{{ Number(res.total_amount).toLocaleString('id-ID', {}) }}
                             </td>
                             <td class="px-4 py-3">
                                 {{ res.status }}
@@ -128,7 +128,7 @@ const navigateToReservation = (id: number) => {
                                 colspan="7"
                                 class="px-4 py-6 text-center text-gray-500"
                             >
-                                No reservations found.
+                                Belum ada pemesanan.
                             </td>
                         </tr>
                     </tbody>

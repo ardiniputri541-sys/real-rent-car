@@ -35,6 +35,12 @@ interface PageProps {
     reservation: Reservation;
 }
 
+const formatRupiah = (value) => {
+    return new Intl.NumberFormat('id-ID', {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+    }).format(Number(value));
+};
 const $page = usePage<PageProps>();
 const reservation = $page.props.reservation;
 </script>
@@ -63,10 +69,10 @@ const reservation = $page.props.reservation;
                         </svg>
                     </div>
                     <h1 class="mb-2 text-3xl font-bold text-gray-900">
-                        Booking Confirmed
+                        Booking Berhasil
                     </h1>
                     <p class="text-gray-600">
-                        Reservation #{{ reservation.reservation_number }}
+                        Nomor Pemesanan #{{ reservation.reservation_number }}
                     </p>
                 </div>
 
@@ -79,7 +85,7 @@ const reservation = $page.props.reservation;
                             <h2
                                 class="mb-6 text-xl font-semibold text-gray-900"
                             >
-                                Vehicle Details
+                                Detail
                             </h2>
                             <div class="flex items-start space-x-6">
                                 <img
@@ -109,17 +115,17 @@ const reservation = $page.props.reservation;
                             <h2
                                 class="mb-6 text-xl font-semibold text-gray-900"
                             >
-                                Rental Information
+                                Informasi Sewa
                             </h2>
                             <div class="grid gap-8 md:grid-cols-2">
                                 <div>
                                     <h3 class="mb-4 font-medium text-gray-900">
-                                        Dates
+                                        Tanggal
                                     </h3>
                                     <div class="space-y-3">
                                         <div class="flex justify-between">
                                             <span class="text-gray-600"
-                                                >Pickup:</span
+                                                >Pengambilan:</span
                                             >
                                             <span class="font-medium">{{
                                                 new Date(
@@ -129,7 +135,7 @@ const reservation = $page.props.reservation;
                                         </div>
                                         <div class="flex justify-between">
                                             <span class="text-gray-600"
-                                                >Return:</span
+                                                >Pengembalian:</span
                                             >
                                             <span class="font-medium">{{
                                                 new Date(
@@ -142,12 +148,12 @@ const reservation = $page.props.reservation;
 
                                 <div>
                                     <h3 class="mb-4 font-medium text-gray-900">
-                                        Locations
+                                        Lokasi
                                     </h3>
                                     <div class="space-y-3">
                                         <div class="flex justify-between">
                                             <span class="text-gray-600"
-                                                >Pickup:</span
+                                                >Pengambilan:</span
                                             >
                                             <span class="font-medium">{{
                                                 reservation.pickup_location
@@ -155,7 +161,7 @@ const reservation = $page.props.reservation;
                                         </div>
                                         <div class="flex justify-between">
                                             <span class="text-gray-600"
-                                                >Return:</span
+                                                >Pengembalian:</span
                                             >
                                             <span class="font-medium">{{
                                                 reservation.return_location
@@ -171,11 +177,11 @@ const reservation = $page.props.reservation;
                             <h2
                                 class="mb-6 text-xl font-semibold text-gray-900"
                             >
-                                Contact Details
+                                Detail Kontak
                             </h2>
                             <div class="grid gap-8 md:grid-cols-2">
                                     <div class="flex gap-2">
-                                        <span class="text-gray-600">Name:</span>
+                                        <span class="text-gray-600">Nama Lengkap:</span>
                                         <span class="font-medium">{{
                                             reservation.user.name
                                         }}</span>
@@ -199,7 +205,7 @@ const reservation = $page.props.reservation;
                             <h2
                                 class="mb-4 text-xl font-semibold text-gray-900"
                             >
-                                Summary
+                                Ringkasan
                             </h2>
                             <div class="space-y-3">
                                 <div class="flex justify-between">
@@ -221,11 +227,7 @@ const reservation = $page.props.reservation;
                                         <span
                                             class="text-2xl font-bold text-orange-500"
                                         >
-                                            ${{
-                                                parseFloat(
-                                                    reservation.total_amount,
-                                                ).toFixed(2)
-                                            }}
+                                            Rp {{ formatRupiah(reservation.total_amount) }}
                                         </span>
                                     </div>
                                 </div>
@@ -237,7 +239,7 @@ const reservation = $page.props.reservation;
                             <h2
                                 class="mb-4 text-xl font-semibold text-gray-900"
                             >
-                                Next Steps
+                                Langkah Selanjutnya:
                             </h2>
                             <div class="space-y-4 text-sm text-gray-700">
                                 <div class="flex items-start space-x-3">
@@ -246,8 +248,7 @@ const reservation = $page.props.reservation;
                                         >1</span
                                     >
                                     <span
-                                        >We'll review your booking within 24
-                                        hours</span
+                                        >Kami akan meninjau pemesanan Anda dalam waktu 24 jam</span
                                     >
                                 </div>
                                 <div class="flex items-start space-x-3">
@@ -256,8 +257,7 @@ const reservation = $page.props.reservation;
                                         >2</span
                                     >
                                     <span
-                                        >You'll receive confirmation email with
-                                        payment details</span
+                                        >Anda akan menerima email konfirmasi berisi detail pembayaran</span
                                     >
                                 </div>
                                 <div class="flex items-start space-x-3">
@@ -266,8 +266,7 @@ const reservation = $page.props.reservation;
                                         >3</span
                                     >
                                     <span
-                                        >Bring your license and confirmation on
-                                        pickup day</span
+                                        >Bawa Surat Izin Mengemudi (SIM) dan bukti email konfirmasi saat pengambilan kendaraan</span
                                     >
                                 </div>
                             </div>
@@ -279,13 +278,13 @@ const reservation = $page.props.reservation;
                                 :href="index.url()"
                                 class="block w-full rounded-lg bg-black px-6 py-3 text-center font-medium text-white transition-colors duration-200 hover:bg-gray-800"
                             >
-                                View My Bookings
+                                Lihat Pemesanan Saya
                             </a>
                             <a
                                 :href="fleet.url()"
                                 class="block w-full rounded-lg border border-gray-300 bg-white px-6 py-3 text-center font-medium text-gray-900 transition-colors duration-200 hover:bg-gray-50"
                             >
-                                Browse More Cars
+                                Lihat Mobil Lainnya
                             </a>
                         </div>
                     </div>

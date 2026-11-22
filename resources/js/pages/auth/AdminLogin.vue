@@ -42,7 +42,7 @@ defineProps<{
                             <Shield class="h-8 w-8 text-orange-400" />
                         </div>
                         <h1 class="mb-2 text-2xl font-bold text-white">
-                            Administrative Access
+                            NusaDrive Management System
                         </h1>
                     </div>
 
@@ -62,7 +62,7 @@ defineProps<{
                                     for="email"
                                     class="mb-2 block text-sm font-semibold text-slate-200"
                                 >
-                                    Administrator Email
+                                    Email Admin
                                 </Label>
                                 <Input
                                     id="email"
@@ -72,7 +72,7 @@ defineProps<{
                                     autofocus
                                     :tabindex="1"
                                     autocomplete="email"
-                                    placeholder="admin@domain.com"
+                                    placeholder="Masukkan email"
                                     class="w-full rounded-lg border border-slate-600 bg-slate-700/50 px-4 py-3 text-white placeholder-slate-400 transition-colors focus:border-orange-500 focus:bg-slate-700 focus:ring-2 focus:ring-orange-500/20"
                                 />
                                 <InputError
@@ -94,7 +94,7 @@ defineProps<{
                                             class="flex items-center space-x-2"
                                         >
                                             <Lock class="h-4 w-4" />
-                                            <span>Secure Password</span>
+                                            <span>Kata Sandi</span>
                                         </div>
                                     </Label>
                                 </div>
@@ -105,7 +105,7 @@ defineProps<{
                                     required
                                     :tabindex="2"
                                     autocomplete="current-password"
-                                    placeholder="Enter secure password"
+                                    placeholder="Masukkan kata sandi"
                                     class="w-full rounded-lg border border-slate-600 bg-slate-700/50 px-4 py-3 text-white placeholder-slate-400 transition-colors focus:border-orange-500 focus:bg-slate-700 focus:ring-2 focus:ring-orange-500/20"
                                 />
                                 <InputError
@@ -129,7 +129,7 @@ defineProps<{
                                 {{
                                     processing
                                         ? 'Authenticating...'
-                                        : 'Access System'
+                                        : 'Masuk ke Panel Admin'
                                 }}
                             </Button>
 
@@ -142,12 +142,11 @@ defineProps<{
                                 >
                                     <Shield class="h-4 w-4" />
                                     <p class="text-xs">
-                                        Secure connection established
+                                        Koneksi aman telah terjalin
                                     </p>
                                 </div>
                                 <p class="mt-2 text-xs text-slate-500">
-                                    All administrative actions are logged and
-                                    monitored
+                                    Semua aktivitas administratif dicatat dan dipantau
                                 </p>
                             </div>
                         </Form>
@@ -162,7 +161,7 @@ defineProps<{
                                 class="h-2 w-2 animate-pulse rounded-full bg-amber-400"
                             ></div>
                             <p class="text-xs text-amber-300">
-                                Unauthorized access is strictly prohibited
+                                Akses tanpa izin dilarang
                             </p>
                         </div>
                     </div>

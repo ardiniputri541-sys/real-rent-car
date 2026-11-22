@@ -23,8 +23,11 @@ const props = defineProps<{
 }>();
 
 function fmtMoney(n?: number | string) {
-    const v = Number(n ?? 0);
-    return `${props.currency.symbol}${v.toFixed(2)}`;
+  const v = Number(n ?? 0);
+
+  return `Rp${v.toLocaleString('id-ID', {
+    maximumFractionDigits: 0
+  })}`;
 }
 
 // Generate status colors based on the colors from the backend
@@ -65,7 +68,7 @@ const getStatusColor = (status: string) => {
     <AdminLayout>
         <main class="flex-1 space-y-6 p-8">
             <div class="flex items-center justify-between gap-4">
-                <h1 class="text-2xl font-semibold">Payments</h1>
+                <h1 class="text-2xl font-semibold">Data Pembayaran</h1>
             </div>
 
             <div class="overflow-x-auto rounded-md border">
@@ -75,27 +78,27 @@ const getStatusColor = (status: string) => {
                             <th
                                 class="px-4 py-3 text-left text-xs font-medium tracking-wider text-gray-500 uppercase"
                             >
-                                #
+                                Kode Pembayaran
                             </th>
                             <th
                                 class="px-4 py-3 text-left text-xs font-medium tracking-wider text-gray-500 uppercase"
                             >
-                                Client
+                                Pelanggan
                             </th>
                             <th
                                 class="px-4 py-3 text-left text-xs font-medium tracking-wider text-gray-500 uppercase"
                             >
-                                Reservation
+                                No.Pemesanan
                             </th>
                             <th
                                 class="px-4 py-3 text-left text-xs font-medium tracking-wider text-gray-500 uppercase"
                             >
-                                Amount
+                                Total Harga
                             </th>
                             <th
                                 class="px-4 py-3 text-left text-xs font-medium tracking-wider text-gray-500 uppercase"
                             >
-                                Method
+                                Metode Pembayaran
                             </th>
                             <th
                                 class="px-4 py-3 text-left text-xs font-medium tracking-wider text-gray-500 uppercase"
@@ -105,7 +108,7 @@ const getStatusColor = (status: string) => {
                             <th
                                 class="px-4 py-3 text-left text-xs font-medium tracking-wider text-gray-500 uppercase"
                             >
-                                Processed
+                                Timestamp
                             </th>
                         </tr>
                     </thead>
@@ -170,7 +173,7 @@ const getStatusColor = (status: string) => {
                                 colspan="7"
                                 class="px-4 py-6 text-center text-gray-500"
                             >
-                                No payments found.
+                                Belum ada pembayaran.
                             </td>
                         </tr>
                     </tbody>
