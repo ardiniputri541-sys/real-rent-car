@@ -99,22 +99,24 @@ class Car extends Model
      */
     public function getImageUrlAttribute(): string
     {
-        // If the relation is already loaded, use it to avoid N+1
         $file = null;
+
         if ($this->relationLoaded('files')) {
             $file = $this->files->firstWhere('collection', 'image');
         }
 
-        // Otherwise query for the first image file
         if (!$file) {
             $file = $this->files()->where('collection', 'image')->first();
         }
 
         if ($file && $file->path) {
-            return Storage::url($file->path);
+            $path = preg_replace('#^storage/#', '', $file->path);
+
+            if (Storage::disk('public')->exists($path)) {
+                return Storage::disk('public')->url($path);
+            }
         }
 
-        // Fallback to the public default image
         return asset('images/car-default.jpg');
     }
 
