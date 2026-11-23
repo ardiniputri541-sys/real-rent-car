@@ -91,7 +91,7 @@ class AuthenticatedSessionController extends Controller
         Auth::login($user, $request->boolean('remember'));
         $request->session()->regenerate();
 
-        return redirect()->intended(route('admin.home', absolute: false));
+        return to_route('admin.home');
     }
 
     /**
