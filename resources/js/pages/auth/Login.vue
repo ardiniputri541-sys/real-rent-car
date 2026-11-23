@@ -47,7 +47,7 @@ const isDemoOpen = ref(false);
 
                 <!-- Demo Credentials (Collapsible) -->
                 <div
-                    v-if="false" class="overflow-hidden rounded-xl border border-blue-200 bg-gradient-to-r from-blue-50 to-indigo-50 shadow-sm"
+                    class="overflow-hidden rounded-xl border border-blue-200 bg-gradient-to-r from-blue-50 to-indigo-50 shadow-sm"
                 >
                     <!-- Toggle Button -->
                     <button
@@ -88,7 +88,7 @@ const isDemoOpen = ref(false);
                     <!-- Collapsible Content -->
                     <div v-show="isDemoOpen" class="space-y-3 px-6 pb-6">
                         <!-- Client Demo -->
-                        <div class="mt-2 rounded-lg bg-white p-3 shadow-sm">
+                        <div v-if="false" class="mt-2 rounded-lg bg-white p-3 shadow-sm">
                             <div class="mb-2 flex items-center space-x-2">
                                 <User class="h-4 w-4 text-gray-600" />
                                 <span
